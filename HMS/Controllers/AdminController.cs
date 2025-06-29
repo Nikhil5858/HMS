@@ -28,7 +28,7 @@ namespace HMS.Controllers
                 return View("AdminDashboard");
             }
             else {
-                TempData["Message"] = "Invallid User!";
+                TempData["Message"] = "Invalid Email or Password!";
                 return View();
             }
         }

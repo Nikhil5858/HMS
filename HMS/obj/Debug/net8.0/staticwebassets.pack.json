@@ -5,12 +5,152 @@
       "PackagePath": "staticwebassets\\HMS.bundle.scp.css"
     },
     {
-      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\HMS - Logo-01.png",
-      "PackagePath": "staticwebassets\\assets\\HMS - Logo-01.png"
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\css\\lineicons.css",
+      "PackagePath": "staticwebassets\\assets\\css\\lineicons.css"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\css\\loading-bar.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\loading-bar.min.css"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\css\\main.css",
+      "PackagePath": "staticwebassets\\assets\\css\\main.css"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\css\\materialdesignicons.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\materialdesignicons.min.css"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\css\\morris.css",
+      "PackagePath": "staticwebassets\\assets\\css\\morris.css"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\fonts\\LineIcons.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\LineIcons.eot"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\fonts\\LineIcons.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\LineIcons.svg"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\fonts\\LineIcons.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\LineIcons.ttf"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\fonts\\LineIcons.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\LineIcons.woff"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\fonts\\LineIcons.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\LineIcons.woff2"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\fonts\\materialdesignicons-webfont.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\materialdesignicons-webfont.eot"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\fonts\\materialdesignicons-webfont.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\materialdesignicons-webfont.ttf"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\fonts\\materialdesignicons-webfont.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\materialdesignicons-webfont.woff"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\fonts\\materialdesignicons-webfont.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\materialdesignicons-webfont.woff2"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\images\\logo\\HMS - Logo-01.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo\\HMS - Logo-01.png"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\images\\logo\\logo.bmp",
+      "PackagePath": "staticwebassets\\assets\\images\\logo\\logo.bmp"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\images\\logo\\output-onlinepngtools.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\logo\\output-onlinepngtools.svg"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\images\\profile\\user.png",
+      "PackagePath": "staticwebassets\\assets\\images\\profile\\user.png"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\js\\loading-bar.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\loading-bar.min.js"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\assets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\js\\polyfill.js",
+      "PackagePath": "staticwebassets\\assets\\js\\polyfill.js"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\_common.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_common.scss"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\_default.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_default.scss"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\_mixin.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_mixin.scss"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\_sidebar.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_sidebar.scss"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\alerts\\_alerts.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\alerts\\_alerts.scss"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\buttons\\_buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\buttons\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\dashboards\\_dashboards.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\dashboards\\_dashboards.scss"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\forms\\_form-elements.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\forms\\_form-elements.scss"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\header\\_header.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\header\\_header.scss"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\icons\\_icons.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\icons\\_icons.scss"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\main.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\main.scss"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\tables\\_tables.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\tables\\_tables.scss"
+    },
+    {
+      "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\assets\\scss\\typography\\_typography.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\typography\\_typography.scss"
     },
     {
       "Id": "D:\\.Net\\HMS\\HMS\\wwwroot\\favicon.ico",
