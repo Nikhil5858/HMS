@@ -18,6 +18,7 @@ namespace HMS.Controllers
         {
             return View();
         }
+        
         [HttpPost]
         public IActionResult Login(string email,string password)
         {

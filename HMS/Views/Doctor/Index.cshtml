@@ -1,0 +1,97 @@
+﻿<section class="table-components">
+    <div class="container-fluid">
+        <!-- ========== title-wrapper start ========== -->
+        <div class="title-wrapper pt-30">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="title mb-30">
+                        <h2>Doctor List</h2>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="breadcrumb-wrapper mb-30">
+                        <nav aria-label="breadcrumb">
+                            <a href="/Doctor/DoctorAdd" class="btn btn-primary ms-5">+ Add Doctor</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========== title-wrapper end ========== -->
+        <!-- ========== tables-wrapper start ========== -->
+        <div class="tables-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card-style mb-30">
+                        <div class="table-wrapper table-responsive">
+                            <table class="table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th style="min-width: 150px;">Name</th>
+                                        <th style="min-width: 150px;">Phone No</th>
+                                        <th style="min-width: 200px;">Email</th>
+                                        <th style="min-width: 200px;">Qualification</th>
+                                        <th style="min-width: 100px;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Courtney Henry</td>
+                                        <td>(303)555 3343523</td>
+                                        <td>yourmail@gmail.com</td>
+                                        <td>UIdeck digital agency</td>
+                                        <td>
+                                            <div class="action">
+                                                <a asp-action="DoctorEdit" asp-controller="Doctor" asp-route-id="1" class="text-dark">
+                                                    <i class="lni lni-pencil"></i>
+                                                </a>
+                                                <button class="text-danger">
+                                                    <i class="lni lni-trash-can"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>John Doe</td>
+                                        <td>(303)555 3343523</td>
+                                        <td>yourmail@gmail.com</td>
+                                        <td>Graygrids digital agency</td>
+                                        <td>
+                                            <div class="action">
+                                                <a asp-action="DoctorEdit" asp-controller="Doctor" asp-route-id="2" class="text-dark">
+                                                    <i class="lni lni-pencil"></i>
+                                                </a>
+                                                <button class="text-danger">
+                                                    <i class="lni lni-trash-can"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>David Smith</td>
+                                        <td>(303)555 3343523</td>
+                                        <td>yourmail@gmail.com</td>
+                                        <td>Abc agency</td>
+                                        <td>
+                                            <div class="action">
+                                                <a asp-action="DoctorEdit" asp-controller="Doctor" asp-route-id="3" class="text-dark">
+                                                    <i class="lni lni-pencil"></i>
+                                                </a>
+                                                <button class="text-danger">
+                                                    <i class="lni lni-trash-can"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- end table -->
+                        </div>
+                    </div>
+                    <!-- end card -->
+                </div>
+            </div>
+        </div>
+        <!-- ========== tables-wrapper end ========== -->
+    </div>
+</section>

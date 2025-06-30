@@ -8,49 +8,138 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HMS.styles.css" asp-append-version="true" />
 
-    <link rel="stylesheet" href="~/css/lineicons.css" />
-    <link rel="stylesheet" href="~/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/assets/css/lineicons.css" />
+    <link rel="stylesheet" href="~/assets/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="~/assets/css/main.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <!-- ======== sidebar-nav start ===========  -->
+    <aside class="sidebar-nav-wrapper">
+        <div class="navbar-logo">
+            <a asp-controller="Admin" asp-action="AdminDashboard">
+                <img src="~/assets/images/logo/logo.bmp" alt="logo" />
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-item">
+                    <a asp-controller="Admin" asp-action="AdminDashboard">
+                        <span class="icon"><i class="lni lni-hospital"></i></span>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="Department" asp-action="Index">
+                        <span class="icon"><i class="lni lni-briefcase"></i></span>
+                        <span class="text">Department</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="Doctor" asp-action="Index">
+                        <span class="icon"><i class="lni lni-capsule"></i></span>
+                        <span class="text">Doctor</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="Patient" asp-action="Index">
+                        <span class="icon"><i class="lni lni-user"></i></span>
+                        <span class="text">Patient</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="Appointment" asp-action="Index">
+                        <span class="icon"><i class="lni lni-calendar"></i></span>
+                        <span class="text">Appointment</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="DoctorDepartment" asp-action="Index">
+                        <span class="icon"><i class="lni lni-first-aid"></i></span>
+                        <span class="text">Doctor Department</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="overlay"></div>
+    <!-- ======== sidebar-nav end =========== -->
+    <main class="main-wrapper">
+        <!-- ========== header start ========== -->
+        <header class="header">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HMS</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-6">
+                        <div class="header-left d-flex align-items-center">
+                            <div class="menu-toggle-btn mr-20">
+                                <button id="menu-toggle" class="main-btn primary-btn btn-hover">
+                                    <i class="lni lni-chevron-left me-2"></i> Menu
+                                </button>
+                            </div>
+                            <div class="header-search d-none d-md-flex">
+                                <form>
+                                    <input type="text" placeholder="Search..." />
+                                    <button><i class="lni lni-search-alt"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-6">
+                        <div class="header-right">
+                            <div class="profile-box ml-15">
+                                <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="profile-info">
+                                        <div class="info">
+                                            <h6>Nikhil Rathod</h6>
+                                            <div class="image">
+                                                <img src="~/assets/images/profile/user.png" alt="" />
+                                                <span class="status"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <i class="lni lni-chevron-down"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
+                                    <li>
+                                        <a href="#"><i class="lni lni-exit"></i> Sign Out</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+        </header>
+        <!-- ========== header end ========== -->
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - HMS - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+        <section class="section">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </section>
+
+        <!-- ========== footer start =========== -->
+        <footer class="footer mt-auto ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 order-last order-md-first text-center text-md-start">
+                        <p class="text-sm">© 2025</p>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-center justify-content-md-end">
+                        <p class="text-sm me-3">Terms & Conditions</p>
+                        <p class="text-sm">Privacy & Policy</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- ========== footer end =========== -->
+    </main>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
-    <script src="~/js/polyfill.js"></script>
-    <script src="~/js/main.js"></script>
+    <script src="~/assets/js/polyfill.js"></script>
+    <script src="~/assets/js/main.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

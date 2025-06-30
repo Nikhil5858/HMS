@@ -1321,7 +1321,7 @@ h6,
 /* ===== input style ===== */
 .input-style-1 {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .input-style-1 label {
   font-size: 14px;
@@ -1336,7 +1336,7 @@ h6,
   background: rgba(239, 239, 239, 0.5);
   border: 1px solid #e5e5e5;
   border-radius: 4px;
-  padding: 16px;
+  padding: 9px;
   color: #5d657b;
   resize: none;
   transition: all 0.3s;
