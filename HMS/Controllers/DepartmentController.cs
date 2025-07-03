@@ -8,5 +8,13 @@ namespace HMS.Controllers
         {
             return View();
         }
+        public IActionResult DepartmentAdd()
+        {
+            return View();
+        }
+        public IActionResult DepartmentEdit()
+        {
+            return View();
+        }
     }
 }

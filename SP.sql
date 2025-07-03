@@ -33,7 +33,7 @@ begin
 	values(@UserName,@Password,@Email,@MobileNo,@IsActive,GETDATE())
 end
 
-exec SP_Users_Insert 'nikhil','abc','abc@gmail.com','1234567890'
+exec SP_Users_Insert 'va','abc','abc@gmail.com','1234567890'
 
 -----------
 
@@ -215,17 +215,27 @@ exec sp_Doctor_Delete 1
 
 --========================DoctorDepartment=============================
 
-CREATE proc sp_DoctorDepartment_Insert
-    @DoctorID INT,
-    @DepartmentID INT,
-    @UserID INT
+CREATE PROCEDURE sp_DepartmentDoctor_select
 AS
-BEGIN
-    INSERT INTO DoctorDepartment (DoctorID, DepartmentID, Created, Modified, UserID)
-    VALUES (@DoctorID, @DepartmentID, GETDATE(), GETDATE(), @UserID)
-END
+SELECT DD.DoctorDepartmentID, DD.DoctorID, Doc.Name AS DoctorName, DD.DepartmentID, Dept.DepartmentName,
+       DD.Created, DD.Modified, U.UserName
+FROM DoctorDepartment DD
+INNER JOIN Doctor Doc ON DD.DoctorID = Doc.DoctorID
+INNER JOIN Department Dept ON DD.DepartmentID = Dept.DepartmentID
+INNER JOIN [User] U ON DD.UserID = U.UserID
+ORDER BY Doc.Name, Dept.DepartmentName
 
 exec sp_DoctorDepartment_Insert 2,2,2
+
+-----
+
+CREATE PROCEDURE sp_DepartmentDoctor_selectById
+@DoctorDepartmentID INT
+AS
+SELECT DD.DoctorDepartmentID, DD.DoctorID, DD.DepartmentID, DD.Created, DD.Modified, DD.UserID
+FROM DoctorDepartment DD
+WHERE DD.DoctorDepartmentID = @DoctorDepartmentID
+ORDER BY DD.DoctorDepartmentID
 
 -----
 
@@ -311,7 +321,7 @@ BEGIN
 END
 
 
-exec sp_Patient_Insert 'abc','2003-02-11','female','abc@gmail.com','1234567890','abc','jamnagar','gujarat',1,2
+exec sp_Patient_Insert 'vai','2003-02-11','female','abc@gmail.com','1234567890','abc','jamnagar','gujarat',1,2
 
 
 -----

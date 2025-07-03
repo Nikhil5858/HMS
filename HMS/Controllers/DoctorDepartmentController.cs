@@ -8,5 +8,13 @@ namespace HMS.Controllers
         {
             return View();
         }
+        public IActionResult DoctorDepartmentAdd()
+        {
+            return View();
+        }
+        public IActionResult DoctorDepartmentEdit()
+        {
+            return View();
+        }
     }
 }
