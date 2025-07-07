@@ -10,6 +10,19 @@ exec SP_Users_Select
 
 ----
 
+CREATE PROCEDURE SP_User_Login
+    @UserName NVARCHAR(100),
+    @Password NVARCHAR(100)
+AS
+BEGIN
+    SELECT TOP 1 UserID, UserName, Email, MobileNo, IsActive
+    FROM [User]
+    WHERE UserName = @UserName AND Password = @Password AND IsActive = 1
+END
+
+
+--------
+
 create proc SP_Users_SelectById
 	@userid int
 as
