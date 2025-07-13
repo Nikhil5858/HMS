@@ -3,48 +3,16 @@
   "WorkspaceRootPath": "D:\\.Net\\HMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\admin\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\admin\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\models\\databasemethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\models\\databasemethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\appointment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\appointment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\doctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\doctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\appointment\\appointmentadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\appointment\\appointmentadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\department\\departmentadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\department\\departmentadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\department\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\department\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\department\\departmentedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\department\\departmentedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\commonmethod_class\\departmentactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\commonmethod_class\\departmentactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,145 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Program.cs",
-              "RelativeDocumentMoniker": "HMS\\Program.cs",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Program.cs",
-              "RelativeToolTip": "HMS\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T02:27:44.614Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "HMS\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "HMS\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-06T13:15:10.125Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DatabaseMethod.cs",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Models\\DatabaseMethod.cs",
-              "RelativeDocumentMoniker": "HMS\\Models\\DatabaseMethod.cs",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Models\\DatabaseMethod.cs",
-              "RelativeToolTip": "HMS\\Models\\DatabaseMethod.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-06T13:13:56.992Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AppointmentAdd.cshtml",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\Appointment\\AppointmentAdd.cshtml",
-              "RelativeDocumentMoniker": "HMS\\Views\\Appointment\\AppointmentAdd.cshtml",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\Appointment\\AppointmentAdd.cshtml",
-              "RelativeToolTip": "HMS\\Views\\Appointment\\AppointmentAdd.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-03T16:53:50.536Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\Appointment\\Index.cshtml",
-              "RelativeDocumentMoniker": "HMS\\Views\\Appointment\\Index.cshtml",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\Appointment\\Index.cshtml",
-              "RelativeToolTip": "HMS\\Views\\Appointment\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-03T16:52:41.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\Doctor\\Index.cshtml",
-              "RelativeDocumentMoniker": "HMS\\Views\\Doctor\\Index.cshtml",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\Doctor\\Index.cshtml",
-              "RelativeToolTip": "HMS\\Views\\Doctor\\Index.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-03T16:45:10.877Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "HMS\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "HMS\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADgAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-03T16:26:08.612Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AdminDashboard.cshtml",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\Admin\\AdminDashboard.cshtml",
-              "RelativeDocumentMoniker": "HMS\\Views\\Admin\\AdminDashboard.cshtml",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\Admin\\AdminDashboard.cshtml",
-              "RelativeToolTip": "HMS\\Views\\Admin\\AdminDashboard.cshtml",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-03T16:10:08.722Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\Department\\Index.cshtml",
               "RelativeDocumentMoniker": "HMS\\Views\\Department\\Index.cshtml",
               "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\Department\\Index.cshtml",
               "RelativeToolTip": "HMS\\Views\\Department\\Index.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAFIAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAswFYAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-03T16:03:28.423Z"
+              "WhenOpened": "2025-07-13T13:14:40.292Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DepartmentEdit.cshtml",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\Department\\DepartmentEdit.cshtml",
-              "RelativeDocumentMoniker": "HMS\\Views\\Department\\DepartmentEdit.cshtml",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\Department\\DepartmentEdit.cshtml",
-              "RelativeToolTip": "HMS\\Views\\Department\\DepartmentEdit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-03T16:02:36.01Z"
+              "DocumentIndex": 1,
+              "Title": "DepartmentController.cs",
+              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Controllers\\DepartmentController.cs",
+              "RelativeDocumentMoniker": "HMS\\Controllers\\DepartmentController.cs",
+              "ToolTip": "D:\\.Net\\HMS\\HMS\\Controllers\\DepartmentController.cs",
+              "RelativeToolTip": "HMS\\Controllers\\DepartmentController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwCIAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T13:14:30.951Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DepartmentAdd.cshtml",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\Department\\DepartmentAdd.cshtml",
-              "RelativeDocumentMoniker": "HMS\\Views\\Department\\DepartmentAdd.cshtml",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\Department\\DepartmentAdd.cshtml",
-              "RelativeToolTip": "HMS\\Views\\Department\\DepartmentAdd.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-03T16:01:16.121Z"
+              "DocumentIndex": 2,
+              "Title": "DepartmentActions.cs",
+              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\CommonMethod_Class\\DepartmentActions.cs",
+              "RelativeDocumentMoniker": "HMS\\CommonMethod_Class\\DepartmentActions.cs",
+              "ToolTip": "D:\\.Net\\HMS\\HMS\\CommonMethod_Class\\DepartmentActions.cs",
+              "RelativeToolTip": "HMS\\CommonMethod_Class\\DepartmentActions.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T13:14:28.716Z",
+              "EditorCaption": ""
             }
           ]
         }

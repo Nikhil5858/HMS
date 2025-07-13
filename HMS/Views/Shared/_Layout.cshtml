@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="~/assets/css/main.css" />
 </head>
 <body>
-    <!-- ======== sidebar-nav start ===========  -->
     <aside class="sidebar-nav-wrapper">
         <div class="navbar-logo">
             <a asp-controller="Admin" asp-action="AdminDashboard">
@@ -28,43 +27,105 @@
                         <span class="text">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a asp-controller="Department" asp-action="Index">
-                        <span class="icon"><i class="lni lni-briefcase"></i></span>
+                <li class="nav-item nav-item-has-children">
+                    <a href="#0"
+                       class="collapsed"
+                       data-bs-toggle="collapse"
+                       data-bs-target="#ddmenu_department"
+                       aria-controls="ddmenu_department"
+                       aria-expanded="false"
+                       aria-label="Toggle navigation">
+                        <span class="icon"><i class="lni lni-network"></i></span>
                         <span class="text">Department</span>
                     </a>
+                    <ul id="ddmenu_department" class="collapse dropdown-nav">
+                        <li>
+                            <a asp-controller="Department" asp-action="Index"> Department List </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Department" asp-action="DepartmentAdd"> Add Department </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Department" asp-action="DepartmentEdit"> Edit Department </a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a asp-controller="Doctor" asp-action="Index">
+                <li class="nav-item nav-item-has-children">
+                    <a href="#0"
+                       class="collapsed"
+                       data-bs-toggle="collapse"
+                       data-bs-target="#ddmenu_doctor"
+                       aria-controls="ddmenu_doctor"
+                       aria-expanded="false"
+                       aria-label="Toggle navigation">
                         <span class="icon"><i class="lni lni-capsule"></i></span>
                         <span class="text">Doctor</span>
                     </a>
+                    <ul id="ddmenu_doctor" class="collapse dropdown-nav">
+                        <li><a asp-controller="Doctor" asp-action="Index">Doctor List</a></li>
+                        <li><a asp-controller="Doctor" asp-action="DoctorAdd">Add Doctor</a></li>
+                        <li><a asp-controller="Doctor" asp-action="DoctorEdit">Edit Doctor</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a asp-controller="Patient" asp-action="Index">
+
+                <li class="nav-item nav-item-has-children">
+                    <a href="#0"
+                       class="collapsed"
+                       data-bs-toggle="collapse"
+                       data-bs-target="#ddmenu_patient"
+                       aria-controls="ddmenu_patient"
+                       aria-expanded="false"
+                       aria-label="Toggle navigation">
                         <span class="icon"><i class="lni lni-user"></i></span>
                         <span class="text">Patient</span>
                     </a>
+                    <ul id="ddmenu_patient" class="collapse dropdown-nav">
+                        <li><a asp-controller="Patient" asp-action="Index">Patient List</a></li>
+                        <li><a asp-controller="Patient" asp-action="PatientAdd">Add Patient</a></li>
+                        <li><a asp-controller="Patient" asp-action="PatientEdit">Edit Patient</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a asp-controller="Appointment" asp-action="Index">
+
+                <li class="nav-item nav-item-has-children">
+                    <a href="#0"
+                       class="collapsed"
+                       data-bs-toggle="collapse"
+                       data-bs-target="#ddmenu_appointment"
+                       aria-controls="ddmenu_appointment"
+                       aria-expanded="false"
+                       aria-label="Toggle navigation">
                         <span class="icon"><i class="lni lni-calendar"></i></span>
                         <span class="text">Appointment</span>
                     </a>
+                    <ul id="ddmenu_appointment" class="collapse dropdown-nav">
+                        <li><a asp-controller="Appointment" asp-action="Index">Appointment List</a></li>
+                        <li><a asp-controller="Appointment" asp-action="AppointmentAdd">Add Appointment</a></li>
+                        <li><a asp-controller="Appointment" asp-action="AppointmentEdit">Edit Appointment</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a asp-controller="DoctorDepartment" asp-action="Index">
+
+                <li class="nav-item nav-item-has-children">
+                    <a href="#0"
+                       class="collapsed"
+                       data-bs-toggle="collapse"
+                       data-bs-target="#ddmenu_docdept"
+                       aria-controls="ddmenu_docdept"
+                       aria-expanded="false"
+                       aria-label="Toggle navigation">
                         <span class="icon"><i class="lni lni-sthethoscope"></i></span>
                         <span class="text">Doctor Department</span>
                     </a>
+                    <ul id="ddmenu_docdept" class="collapse dropdown-nav">
+                        <li><a asp-controller="DoctorDepartment" asp-action="Index">Doctor Dept List</a></li>
+                        <li><a asp-controller="DoctorDepartment" asp-action="AddDoctorDepartment">Add Doctor Dept</a></li>
+                        <li><a asp-controller="DoctorDepartment" asp-action="EditDoctorDepartment">Edit Doctor Dept</a></li>
+                    </ul>
                 </li>
             </ul>
         </nav>
     </aside>
     <div class="overlay"></div>
-    <!-- ======== sidebar-nav end =========== -->
     <main class="main-wrapper">
-        <!-- ========== header start ========== -->
         <header class="header">
             <div class="container-fluid">
                 <div class="row">
@@ -110,7 +171,6 @@
                 </div>
             </div>
         </header>
-        <!-- ========== header end ========== -->
 
         <section class="section">
             <div class="container-fluid">
@@ -118,7 +178,6 @@
             </div>
         </section>
 
-        <!-- ========== footer start =========== -->
         <footer class="footer mt-auto ">
             <div class="container-fluid">
                 <div class="row">
@@ -132,7 +191,6 @@
                 </div>
             </div>
         </footer>
-        <!-- ========== footer end =========== -->
     </main>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

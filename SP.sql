@@ -1,3 +1,109 @@
+EXEC sp_MSforeachtable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL';
+
+DECLARE @sql NVARCHAR(MAX) = '';
+SELECT @sql += 'ALTER TABLE [' + s.name + '].[' + t.name + '] DROP CONSTRAINT [' + f.name + '];'
+FROM sys.foreign_keys f
+INNER JOIN sys.tables t ON f.parent_object_id = t.object_id
+INNER JOIN sys.schemas s ON t.schema_id = s.schema_id;
+EXEC sp_executesql @sql;
+
+EXEC sp_MSforeachtable 'DROP TABLE ?';
+
+SELECT * FROM INFORMATION_SCHEMA.TABLES;
+
+
+
+CREATE TABLE [User] (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    UserName NVARCHAR(100) NOT NULL,
+    Password NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(100) NOT NULL,
+    MobileNo NVARCHAR(100) NOT NULL,
+    IsActive BIT NOT NULL DEFAULT 1,
+    Created DATETIME DEFAULT GETDATE(),
+    Modified DATETIME NOT NULL
+);
+
+-- Department Table
+CREATE TABLE Department (
+    DepartmentID INT IDENTITY(1,1) PRIMARY KEY,
+    DepartmentName NVARCHAR(100) NOT NULL,
+    Description NVARCHAR(250) NULL,
+    IsActive BIT NOT NULL DEFAULT 1,
+    Created DATETIME NOT NULL DEFAULT GETDATE(),
+    Modified DATETIME NOT NULL,
+    UserID INT NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES [User](UserID)
+);
+
+-- Doctor Table
+CREATE TABLE Doctor (
+    DoctorID INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    Phone NVARCHAR(20) NOT NULL,
+    Email NVARCHAR(100) NOT NULL,
+    Qualification NVARCHAR(100) NOT NULL,
+    Specialization NVARCHAR(100) NOT NULL,
+    IsActive BIT NOT NULL DEFAULT 1,
+    Created DATETIME NOT NULL DEFAULT GETDATE(),
+    Modified DATETIME NOT NULL,
+    UserID INT NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES [User](UserID)
+);
+
+-- DoctorDepartment Table (Junction table for many-to-many relationship)
+CREATE TABLE DoctorDepartment (
+    DoctorDepartmentID INT IDENTITY(1,1) PRIMARY KEY,
+    DoctorID INT NOT NULL,
+    DepartmentID INT NOT NULL,
+    Created DATETIME NOT NULL DEFAULT GETDATE(),
+    Modified DATETIME NOT NULL,
+    UserID INT NOT NULL,
+    FOREIGN KEY (DoctorID) REFERENCES Doctor(DoctorID),
+    FOREIGN KEY (DepartmentID) REFERENCES Department(DepartmentID),
+    FOREIGN KEY (UserID) REFERENCES [User](UserID)
+);
+
+-- Patient Table
+CREATE TABLE Patient (
+    PatientID INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    DateOfBirth DATETIME NOT NULL,
+    Gender NVARCHAR(10) NOT NULL,
+    Email NVARCHAR(100) NOT NULL,
+    Phone NVARCHAR(100) NOT NULL,
+    Address NVARCHAR(250) NOT NULL,
+    City NVARCHAR(100) NOT NULL,
+    State NVARCHAR(100) NOT NULL,
+    IsActive BIT NOT NULL DEFAULT 1,
+    Created DATETIME NOT NULL DEFAULT GETDATE(),
+    Modified DATETIME NOT NULL,
+    UserID INT NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES [User](UserID)
+);
+
+-- Appointment Table
+CREATE TABLE Appointment (
+    AppointmentID INT IDENTITY(1,1) PRIMARY KEY,
+    DoctorID INT NOT NULL,
+    PatientID INT NOT NULL,
+    AppointmentDate DATETIME NOT NULL,
+    AppointmentStatus NVARCHAR(20) NOT NULL,
+    Description NVARCHAR(250) NOT NULL,
+    SpecialRemarks NVARCHAR(100) NOT NULL,
+    Created DATETIME NOT NULL DEFAULT GETDATE(),
+    Modified DATETIME NOT NULL,
+    UserID INT NOT NULL,
+    TotalConsultedAmount DECIMAL(5,2) NULL,
+    FOREIGN KEY (DoctorID) REFERENCES Doctor(DoctorID),
+    FOREIGN KEY (PatientID) REFERENCES Patient(PatientID),
+    FOREIGN KEY (UserID) REFERENCES [User](UserID)
+);
+
+
+
+
+
 --========================Users=============================
 
 create proc SP_Users_Select
@@ -11,16 +117,16 @@ exec SP_Users_Select
 ----
 
 CREATE PROCEDURE SP_User_Login
-    @UserName NVARCHAR(100),
+    @Email NVARCHAR(100),
     @Password NVARCHAR(100)
 AS
 BEGIN
-    SELECT TOP 1 UserID, UserName, Email, MobileNo, IsActive
+    SELECT Email, Password 
     FROM [User]
-    WHERE UserName = @UserName AND Password = @Password AND IsActive = 1
+    WHERE Email = @Email AND Password = @Password
 END
 
-
+exec SP_User_Login 'admin@gmail.com','admin'
 --------
 
 create proc SP_Users_SelectById
@@ -87,9 +193,7 @@ begin
 end
 
 exec sp_Department_Select
-
 -----
-
 create proc sp_Department_SelectById
 	@DepartmentID int
 as 

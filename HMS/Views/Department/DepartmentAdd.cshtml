@@ -1,6 +1,12 @@
 ﻿<div class="container-fluid">
     <div class="title-wrapper pt-30">
         <div class="row align-items-center">
+            @if (TempData["Message"] != null)
+            {
+                <div class="d-flex justify-content-end">
+                    <div class="alert alert-success" id="sucMessage">@TempData["Message"]</div>
+                </div>
+            }
             <div class="col-md-6">
                 <div class="title mb-30">
                     <h2>Add Department Information</h2>
@@ -14,18 +20,25 @@
         <div class="card-style mb-30">
             <div class="input-style-1">
                 <label>Department Name: </label>
-                <input type="text" placeholder="Enter Department Name" />
+                <input type="text" name="DepartmentName" placeholder="Enter Department Name" required/>
             </div>
             <div class="input-style-1">
                 <label>Description: </label>
-                <input type="text" placeholder="Enter Department Description" />
+                <input type="text" name="Description" placeholder="Enter Department Description" required/>
             </div>
-            <button class="btn btn-primary mt-2">Save</button>
-            <button class="btn btn-secondary ms-3 mt-2">Cancel</button>
+            <button class="btn btn-primary mt-2" type="submit">Save</button>
+            <button class="btn btn-secondary ms-3 mt-2" type="reset">Cancel</button>
         </div>
     </form>
 </div>
 
-
+<script>
+    setTimeout(() => {
+        var msg = document.getElementById("sucMessage");
+        if (msg) {
+            msg.style.display = "none";
+        }
+    }, 3000);
+</script>
 
 

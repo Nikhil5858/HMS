@@ -8,7 +8,7 @@ namespace HMS.Models
     public class DatabaseMethod
     {
         string connection = "Data Source=DESKTOP-A45M567\\SQLEXPRESS01;Initial Catalog=HMS;Integrated Security=True;Encrypt=False";
-
+        
         SqlConnection? con = null;
 
         public DatabaseMethod()
@@ -18,11 +18,11 @@ namespace HMS.Models
 
         public SqlDataReader check_Login(string email, string password)
         {
-            string query = "select Email,Password from [User] where Email=@email And Password=@password";
-            SqlCommand sqlCommand = new SqlCommand(query, con);
-            sqlCommand.CommandType = CommandType.Text;
-            sqlCommand.Parameters.AddWithValue("@email", email);
-            sqlCommand.Parameters.AddWithValue("@password", password);
+            //string query = "select Email,Password from [User] where Email=@email And Password=@password";
+            SqlCommand sqlCommand = new SqlCommand("SP_User_Login", con);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@Email", email);
+            sqlCommand.Parameters.AddWithValue("@Password", password);
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
@@ -30,8 +30,5 @@ namespace HMS.Models
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             return sqlDataReader;
         }
-
-
-
     }
 }
