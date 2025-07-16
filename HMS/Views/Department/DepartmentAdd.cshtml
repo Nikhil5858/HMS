@@ -1,4 +1,5 @@
-﻿<div class="container-fluid">
+﻿@model HMS.Models.Department
+<div class="container-fluid">
     <div class="title-wrapper pt-30">
         <div class="row align-items-center">
             @if (TempData["Message"] != null)
@@ -20,11 +21,13 @@
         <div class="card-style mb-30">
             <div class="input-style-1">
                 <label>Department Name: </label>
-                <input type="text" name="DepartmentName" placeholder="Enter Department Name" required/>
+                <input type="text" asp-for="DepartmentName" placeholder="Enter Department Name"/>
+                <span asp-validation-for="DepartmentName" class="text-danger mt-2"></span>
             </div>
             <div class="input-style-1">
                 <label>Description: </label>
-                <input type="text" name="Description" placeholder="Enter Department Description" required/>
+                <input type="text" asp-for="Description" placeholder="Enter Department Description"/>
+                <span asp-validation-for="Description" class="text-danger mt-2"></span>
             </div>
             <button class="btn btn-primary mt-2" type="submit">Save</button>
             <button class="btn btn-secondary ms-3 mt-2" type="reset">Cancel</button>

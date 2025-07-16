@@ -35,9 +35,31 @@ namespace HMS.Controllers
             TempData["Message"] = "Department Deleted successfully!";
             return RedirectToAction("Index");
         }
-        public IActionResult DepartmentEdit()
+        [HttpGet]
+        public IActionResult DepartmentEdit(int id)
         {
-            return View();
+            DepartmentActions actions = new DepartmentActions();
+            List<Department> departmentlist = actions.GetDepartment();
+            Department department = departmentlist.FirstOrDefault(d=>d.DepartmentID==id);
+
+            if (department == null) 
+            {
+                return NotFound();
+            }
+            return View(department);
+        }
+        [HttpPost]
+        public IActionResult DepartmentEdit(Department department)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(department);
+            }
+            department.UserID = 1;
+            DepartmentActions actions = new DepartmentActions();
+            actions.updateDepartment(department);
+            TempData["Message"] = "Department updated successfully!";
+            return RedirectToAction("Index");
         }
     }
 }

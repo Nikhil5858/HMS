@@ -56,5 +56,20 @@ namespace HMS.CommonMethod_Class
                 sqlCommand.ExecuteNonQuery();
             }
         }
+
+        public void updateDepartment(Department department)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                SqlCommand sqlCommand = new SqlCommand("sp_Department_Update",sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("@DepartmentID", department.DepartmentID);
+                sqlCommand.Parameters.AddWithValue("@DepartmentName",department.DepartmentName);
+                sqlCommand.Parameters.AddWithValue("@Description", department.Description);
+                sqlCommand.Parameters.AddWithValue("@UserID", department.UserID);
+                sqlConnection.Open();
+                sqlCommand.ExecuteNonQuery();
+            }
+        }
     }
 }
