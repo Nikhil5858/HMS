@@ -1,40 +1,48 @@
-﻿<div class="container-fluid">
+﻿@model HMS.Models.Doctor
+<div class="container-fluid">
     <div class="title-wrapper pt-30">
         <div class="row align-items-center">
             <div class="col-md-6">
                 <div class="title mb-30">
-                    <h2>Edit Doctor Information</h2>
+                    <h2>Edit Doctor</h2>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div class="form-elements-wrapper">
-<form>
+    <form method="post" asp-action="DoctorEdit" asp-controller="Doctor">
         <div class="card-style mb-30">
+            <input type="hidden" asp-for="DoctorID" />
             <div class="input-style-1">
                 <label>Name : </label>
-                <input type="text" placeholder="Enter Name" />
+                <input type="text" asp-for="Name" placeholder="Enter Name" />
+                <span asp-validation-for="Name" class="text-danger mt-2"></span>
             </div>
             <div class="input-style-1">
                 <label>Phone No : </label>
-                <input type="text" placeholder="Enter Phone" />
+                <input type="text" asp-for="Phone" placeholder="Enter Phone" />
+                <span asp-validation-for="Phone" class="text-danger mt-2"></span>
             </div>
             <div class="input-style-1">
                 <label>Email : </label>
-                <input type="text" placeholder="Enter Email" />
+                <input type="text" asp-for="Email" placeholder="Enter Email" />
+                <span asp-validation-for="Email" class="text-danger mt-2"></span>
             </div>
             <div class="input-style-1">
                 <label>Qualification : </label>
-                <input type="text" placeholder="Enter Qualification" />
+                <input type="text" asp-for="Qualification" placeholder="Enter Qualification" />
+                <span asp-validation-for="Qualification" class="text-danger mt-2"></span>
             </div>
             <div class="input-style-1">
                 <label>Specialization : </label>
-                <input type="text" placeholder="Enter Specialization" />
+                <input type="text" asp-for="Specialization" placeholder="Enter Specialization" />
+                <span asp-validation-for="Specialization" class="text-danger mt-2"></span>
             </div>
-            <button class="btn btn-primary mt-2">Save</button>
+            <button class="btn btn-primary mt-2" type="submit">Save</button>
             <button class="btn btn-secondary ms-3 mt-2">Cancel</button>
         </div>
-</form>
+    </form>
+
 </div>
 

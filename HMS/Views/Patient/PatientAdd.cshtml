@@ -1,9 +1,16 @@
-﻿<div class="container-fluid">
+﻿@model HMS.Models.Patient
+<div class="container-fluid">
     <div class="title-wrapper pt-30">
         <div class="row align-items-center">
+            @if (TempData["Message"] != null)
+            {
+                <div class="d-flex justify-content-end">
+                    <div class="alert alert-success" id="sucMessage">@TempData["Message"]</div>
+                </div>
+            }
             <div class="col-md-6">
                 <div class="title mb-30">
-                    <h2>Add Patient Information</h2>
+                    <h2>Add Patient</h2>
                 </div>
             </div>
         </div>
@@ -13,63 +20,76 @@
 <div class="form-elements-wrapper">
     <form method="post" asp-action="PatientAdd" asp-controller="Patient">
         <div class="card-style mb-30">
-
             <div class="input-style-1">
                 <label>Name:</label>
-                <input type="text" name="Name" placeholder="Enter Name" required />
+                <input type="text" asp-for="Name" placeholder="Enter Name" />
+                <span asp-validation-for="Name" class="text-danger mt-2"></span>
             </div>
 
             <div class="input-style-1">
                 <label>Date of Birth:</label>
-                <input type="date" name="DateOfBirth" required />
+                <input type="date" asp-for="DateOfBirth"/>
+                <span asp-validation-for="DateOfBirth" class="text-danger mt-2"></span>
             </div>
 
             <div class="input-style-1">
                 <label>Gender:</label>
-                <select name="Gender" class="form-select form-select-md" required>
+                <select asp-for="Gender" class="form-select form-select-md">
                     <option value="">-- Select Gender --</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
-                    <option value="Other">Other</option>
                 </select>
+                <span asp-validation-for="Gender" class="text-danger mt-2"></span>
             </div>
 
             <div class="input-style-1">
                 <label>Email:</label>
-                <input type="email" name="Email" placeholder="Enter Email" required />
+                <input type="email" asp-for="Email" placeholder="Enter Email" />
+                <span asp-validation-for="Email" class="text-danger mt-2"></span>
             </div>
 
             <div class="input-style-1">
                 <label>Phone No:</label>
-                <input type="text" name="Phone" placeholder="Enter Phone Number" required />
+                <input type="text" asp-for="Phone" placeholder="Enter Phone Number" />
+                <span asp-validation-for="Phone" class="text-danger mt-2"></span>
             </div>
 
             <div class="input-style-1">
                 <label>Address:</label>
-                <input type="text" name="Address" placeholder="Enter Address" required />
+                <input type="text" asp-for="Address" placeholder="Enter Address" />
+                <span asp-validation-for="Address" class="text-danger mt-2"></span>
             </div>
 
             <div class="input-style-1">
                 <label>City:</label>
-                <input type="text" name="City" placeholder="Enter City" required />
+                <input type="text" asp-for="City" placeholder="Enter City" />
+                <span asp-validation-for="City" class="text-danger mt-2"></span>
             </div>
 
             <div class="input-style-1">
                 <label>State:</label>
-                <input type="text" name="State" placeholder="Enter State" required />
+                <input type="text" asp-for="State" placeholder="Enter State" />
+                <span asp-validation-for="State" class="text-danger mt-2"></span>
             </div>
 
             <div class="input-style-1">
                 <label>Is Active:</label>
-                <select class="form-select form-select-md" name="IsActive">
-                    <option value="true" selected>Yes</option>
-                    <option value="false">No</option>
+                <select class="form-select form-select-md" asp-for="IsActive">
+                    <option value="1" selected>Yes</option>
+                    <option value="0">No</option>
                 </select>
             </div>
 
             <button type="submit" class="btn btn-primary mt-2">Save</button>
             <a href="/Patient" class="btn btn-secondary ms-3 mt-2">Cancel</a>
-
         </div>
     </form>
 </div>
+<script>
+    setTimeout(() => {
+        var msg = document.getElementById("sucMessage");
+        if (msg) {
+            msg.style.display= "none";
+        }
+    }, 3000);
+</script>

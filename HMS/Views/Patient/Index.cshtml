@@ -1,4 +1,5 @@
-﻿<section class="table-components">
+﻿@model List<HMS.Models.Patient>
+<section class="table-components">
     <div class="container-fluid">
         <!-- ========== title-wrapper start ========== -->
         <div class="title-wrapper pt-30">
@@ -37,78 +38,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Courtney Henry</td>
-                                        <td>Female</td>
-                                        <td>courtney@example.com</td>
-                                        <td>+1 (303) 555-3343</td>
-                                        <td>New York</td>
-                                        <td>NY</td>
-                                        <td>
-                                            <div class="action">
-                                                <a asp-action="PatientEdit" asp-controller="Patient" asp-route-id="1" class="text-dark">
-                                                    <i class="lni lni-pencil"></i>
-                                                </a>
-                                                <button class="ms-2 text-danger">
-                                                    <i class="lni lni-trash-can"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Courtney Henry</td>
-                                        <td>Female</td>
-                                        <td>courtney@example.com</td>
-                                        <td>+1 (303) 555-3343</td>
-                                        <td>New York</td>
-                                        <td>NY</td>
-                                        <td>
-                                            <div class="action">
-                                                <a asp-action="PatientEdit" asp-controller="Patient" asp-route-id="1" class="text-dark">
-                                                    <i class="lni lni-pencil"></i>
-                                                </a>
-                                                <button class="ms-2 text-danger">
-                                                    <i class="lni lni-trash-can"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Courtney Henry</td>
-                                        <td>Female</td>
-                                        <td>courtney@example.com</td>
-                                        <td>+1 (303) 555-3343</td>
-                                        <td>New York</td>
-                                        <td>NY</td>
-                                        <td>
-                                            <div class="action">
-                                                <a asp-action="PatientEdit" asp-controller="Patient" asp-route-id="1" class="text-dark">
-                                                    <i class="lni lni-pencil"></i>
-                                                </a>
-                                                <button class="ms-2 text-danger">
-                                                    <i class="lni lni-trash-can"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Courtney Henry</td>
-                                        <td>Female</td>
-                                        <td>courtney@example.com</td>
-                                        <td>+1 (303) 555-3343</td>
-                                        <td>New York</td>
-                                        <td>NY</td>
-                                        <td>
-                                            <div class="action">
-                                                <a asp-action="PatientEdit" asp-controller="Patient" asp-route-id="1" class="text-dark">
-                                                    <i class="lni lni-pencil"></i>
-                                                </a>
-                                                <button class="ms-2 text-danger">
-                                                    <i class="lni lni-trash-can"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    @foreach(var pati in Model){   
+                                        <tr>
+                                            <td>@pati.Name</td>
+                                            <td>@pati.Gender</td>
+                                            <td>@pati.Email</td>
+                                            <td>@pati.Phone</td>
+                                            <td>@pati.City</td>
+                                            <td>@pati.State</td>
+                                            <td>
+                                                <div class="action">
+                                                    <a asp-action="PatientEdit" asp-controller="Patient" asp-route-id="@pati.PatientID" class="text-dark">
+                                                        <i class="lni lni-pencil"></i>
+                                                    </a>
+                                                    <a asp-action="PatientDelete" asp-controller="Patient" asp-route-id="@pati.PatientID" class="ms-2 text-danger">
+                                                        <i class="lni lni-trash-can"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
                                 </tbody>
                             </table>
                             <!-- end table -->

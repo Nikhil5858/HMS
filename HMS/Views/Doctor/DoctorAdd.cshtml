@@ -1,40 +1,59 @@
-﻿<div class="container-fluid">
+﻿@model HMS.Models.Doctor
+<div class="container-fluid">
     <div class="title-wrapper pt-30">
         <div class="row align-items-center">
+            @if (TempData["Message"] != null)
+            {
+                <div class="d-flex justify-content-end">
+                    <div class="alert alert-success" id="sucMessage">@TempData["Message"]</div>
+                </div>
+            }
             <div class="col-md-6">
                 <div class="title mb-30">
-                    <h2>Add Doctor Information</h2>
+                    <h2>Add Doctor</h2>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div class="form-elements-wrapper">
-<form>
-        <div class="card-style mb-30">
-            <div class="input-style-1">
-                <label>Name : </label>
-                <input type="text" placeholder="Enter Name" />
-            </div>
-            <div class="input-style-1">
-                <label>Phone No : </label>
-                <input type="text" placeholder="Enter Phone" />
-            </div>
-            <div class="input-style-1">
-                <label>Email : </label>
-                <input type="text" placeholder="Enter Email" />
-            </div>
-            <div class="input-style-1">
-                <label>Qualification : </label>
-                <input type="text" placeholder="Enter Qualification" />
-            </div>
-            <div class="input-style-1">
-                <label>Specialization : </label>
-                <input type="text" placeholder="Enter Specialization" />
-            </div>
-            <button class="btn btn-primary mt-2">Save</button>
-            <button class="btn btn-secondary ms-3 mt-2">Cancel</button>
+<form method="post" asp-action="DoctorAdd" asp-controller="Doctor">
+    <div class="card-style mb-30">
+        <div class="input-style-1">
+            <label>Name : </label>
+            <input type="text" asp-for="Name" placeholder="Enter Name" />
+            <span asp-validation-for="Name" class="text-danger mt-2"></span>
         </div>
+        <div class="input-style-1">
+            <label>Phone No : </label>
+            <input type="text" asp-for="Phone" placeholder="Enter Phone" />
+            <span asp-validation-for="Phone" class="text-danger mt-2"></span>
+        </div>
+        <div class="input-style-1">
+            <label>Email : </label>
+            <input type="text" asp-for="Email" placeholder="Enter Email" />
+            <span asp-validation-for="Email" class="text-danger mt-2"></span>
+        </div>
+        <div class="input-style-1">
+            <label>Qualification : </label>
+            <input type="text" asp-for="Qualification" placeholder="Enter Qualification" />
+            <span asp-validation-for="Qualification" class="text-danger mt-2"></span>
+        </div>
+        <div class="input-style-1">
+            <label>Specialization : </label>
+            <input type="text" asp-for="Specialization" placeholder="Enter Specialization" />
+            <span asp-validation-for="Specialization" class="text-danger mt-2"></span>
+        </div>
+        <button class="btn btn-primary mt-2" type="submit">Save</button>
+        <button class="btn btn-secondary ms-3 mt-2">Cancel</button>
+    </div>
 </form>
 </div>
-
+<script>
+    setTimeout(() => {
+        var msg = document.getElementById("sucMessage");
+        if (msg) {
+            msg.style.display= "none";
+        }
+    }, 3000);
+</script>

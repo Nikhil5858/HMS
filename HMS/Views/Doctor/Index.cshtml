@@ -1,6 +1,6 @@
-﻿<section class="table-components">
+﻿@model List<HMS.Models.Doctor>
+<section class="table-components">
     <div class="container-fluid">
-        <!-- ========== title-wrapper start ========== -->
         <div class="title-wrapper pt-30">
             <div class="row align-items-center">
                 <div class="col-md-6">
@@ -17,8 +17,6 @@
                 </div>
             </div>
         </div>
-        <!-- ========== title-wrapper end ========== -->
-        <!-- ========== tables-wrapper start ========== -->
         <div class="tables-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -31,67 +29,37 @@
                                         <th style="min-width: 150px;">Phone No</th>
                                         <th style="min-width: 200px;">Email</th>
                                         <th style="min-width: 200px;">Qualification</th>
+                                        <th style="min-width: 200px;">Specialization</th>
                                         <th style="min-width: 100px;">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Courtney Henry</td>
-                                        <td>(303)555 3343523</td>
-                                        <td>yourmail@gmail.com</td>
-                                        <td>UIdeck digital agency</td>
-                                        <td>
-                                            <div class="action">
-                                                <a asp-action="DoctorEdit" asp-controller="Doctor" asp-route-id="1" class="text-dark">
-                                                    <i class="lni lni-pencil"></i>
-                                                </a>
-                                                <button class="ms-2 text-danger">
-                                                    <i class="lni lni-trash-can"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>John Doe</td>
-                                        <td>(303)555 3343523</td>
-                                        <td>yourmail@gmail.com</td>
-                                        <td>Graygrids digital agency</td>
-                                        <td>
-                                            <div class="action">
-                                                <a asp-action="DoctorEdit" asp-controller="Doctor" asp-route-id="2" class="text-dark">
-                                                    <i class="lni lni-pencil"></i>
-                                                </a>
-                                                <button class="ms-2 text-danger">
-                                                    <i class="lni lni-trash-can"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>David Smith</td>
-                                        <td>(303)555 3343523</td>
-                                        <td>yourmail@gmail.com</td>
-                                        <td>Abc agency</td>
-                                        <td>
-                                            <div class="action">
-                                                <a asp-action="DoctorEdit" asp-controller="Doctor" asp-route-id="3" class="text-dark">
-                                                    <i class="lni lni-pencil"></i>
-                                                </a>
-                                                <button class="ms-2 text-danger">
-                                                    <i class="lni lni-trash-can"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    @foreach (var doc in Model)
+                                    {
+                                        <tr>
+                                            <td>@doc.Name</td>
+                                            <td>@doc.Phone</td>
+                                            <td>@doc.Email</td>
+                                            <td>@doc.Qualification</td>
+                                            <td>@doc.Specialization</td>
+                                            <td>
+                                                <div class="action">
+                                                    <a asp-action="DoctorEdit" asp-controller="Doctor" asp-route-id="@doc.DoctorID" class="text-dark">
+                                                        <i class="lni lni-pencil"></i>
+                                                    </a>
+                                                    <a asp-action="DoctorDelete" asp-controller="Doctor" asp-route-id="@doc.DoctorID" class="ms-2 text-danger">
+                                                        <i class="lni lni-trash-can"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
                                 </tbody>
                             </table>
-                            <!-- end table -->
                         </div>
                     </div>
-                    <!-- end card -->
                 </div>
             </div>
         </div>
-        <!-- ========== tables-wrapper end ========== -->
     </div>
 </section>
