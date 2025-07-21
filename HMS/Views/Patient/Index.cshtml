@@ -1,7 +1,6 @@
 ﻿@model List<HMS.Models.Patient>
 <section class="table-components">
     <div class="container-fluid">
-        <!-- ========== title-wrapper start ========== -->
         <div class="title-wrapper pt-30">
             <div class="row align-items-center">
                 <div class="col-md-6">
@@ -18,8 +17,25 @@
                 </div>
             </div>
         </div>
-        <!-- ========== title-wrapper end ========== -->
-        <!-- ========== tables-wrapper start ========== -->
+
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete this patient?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <a id="confirmDeleteBtn" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="tables-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -51,22 +67,32 @@
                                                     <a asp-action="PatientEdit" asp-controller="Patient" asp-route-id="@pati.PatientID" class="text-dark">
                                                         <i class="lni lni-pencil"></i>
                                                     </a>
-                                                    <a asp-action="PatientDelete" asp-controller="Patient" asp-route-id="@pati.PatientID" class="ms-2 text-danger">
+                                                    <a href="#" class="ms-2 text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                                       data-delete-url="@Url.Action("PatientDelete", "Patient", new { id = pati.PatientID })">
                                                         <i class="lni lni-trash-can"></i>
                                                     </a>
+                                                    @* <a asp-action="PatientDelete" asp-controller="Patient" asp-route-id="@pati.PatientID" class="ms-2 text-danger">
+                                                        <i class="lni lni-trash-can"></i>
+                                                    </a> *@
                                                 </div>
                                             </td>
                                         </tr>
                                     }
                                 </tbody>
                             </table>
-                            <!-- end table -->
                         </div>
                     </div>
-                    <!-- end card -->
                 </div>
             </div>
         </div>
-        <!-- ========== tables-wrapper end ========== -->
     </div>
 </section>
+<script>
+    const openModel = document.getElementById('deleteModal');
+    const confirmBtn = document.getElementById('confirmDeleteBtn');
+        openModel.addEventListener('show.bs.modal', (event)=>{
+        const trigger = event.relatedTarget;
+        const deleteUrl = trigger.getAttribute('data-delete-url');
+        confirmBtn.setAttribute('href', deleteUrl);
+    });
+</script>

@@ -104,6 +104,7 @@ CREATE TABLE Appointment (
 
 
 
+
 --========================Users=============================
 
 create proc SP_Users_Select
@@ -342,17 +343,34 @@ INNER JOIN Department Dept ON DD.DepartmentID = Dept.DepartmentID
 INNER JOIN [User] U ON DD.UserID = U.UserID
 ORDER BY Doc.Name, Dept.DepartmentName
 
-exec sp_DoctorDepartment_Insert 2,2,2
+exec sp_DoctorDepartment_Insert 2,2,1
 
 -----
 
-CREATE PROCEDURE sp_DepartmentDoctor_selectById
-@DoctorDepartmentID INT
+CREATE OR ALTER PROCEDURE [dbo].[sp_DoctorDepartment_SelectByUserID]
 AS
-SELECT DD.DoctorDepartmentID, DD.DoctorID, DD.DepartmentID, DD.Created, DD.Modified, DD.UserID
-FROM DoctorDepartment DD
-WHERE DD.DoctorDepartmentID = @DoctorDepartmentID
-ORDER BY DD.DoctorDepartmentID
+BEGIN
+    SELECT 
+        dd.DoctorDepartmentID,
+        doc.Name AS DoctorName,
+        dept.DepartmentName
+    FROM 
+        DoctorDepartment dd
+    INNER JOIN Doctor doc ON doc.DoctorID = dd.DoctorID
+    INNER JOIN Department dept ON dept.DepartmentID = dd.DepartmentID
+END
+
+
+
+
+CREATE OR ALTER PROCEDURE sp_DoctorDepartment_SelectByID
+    @DoctorDepartmentID INT
+AS
+BEGIN
+    SELECT DoctorDepartmentID, DoctorID, DepartmentID, UserID
+    FROM DoctorDepartment
+    WHERE DoctorDepartmentID = @DoctorDepartmentID
+END
 
 -----
 
@@ -383,6 +401,20 @@ END
 exec sp_DoctorsDepartment_select 2
 
 
+CREATE OR ALTER PROCEDURE sp_Doctor_Department_Update
+    @DoctorDepartmentID INT,
+    @DoctorID INT,
+    @DepartmentID INT
+AS
+BEGIN
+    UPDATE DoctorDepartment
+    SET 
+        DoctorID = @DoctorID,
+        DepartmentID = @DepartmentID
+    WHERE DoctorDepartmentID = @DoctorDepartmentID
+END
+
+
 -----
 
 
@@ -396,6 +428,38 @@ END
 exec sp_DoctortoDepartment_Delete 1
 
 
+
+CREATE OR ALTER PROCEDURE [dbo].[sp_DoctorDepartment_GetDoctorAndDepartment]
+AS
+BEGIN
+    SELECT 
+        d.DoctorID,
+        d.Name AS DoctorName,
+        dept.DepartmentID,
+        dept.DepartmentName
+    FROM 
+        Doctor d
+    INNER JOIN DoctorDepartment dd ON d.DoctorID = dd.DoctorID
+    INNER JOIN Department dept ON dd.DepartmentID = dept.DepartmentID
+END
+GO
+
+
+EXEC sp_DoctorDepartment_GetDoctorAndDepartment
+
+--=========================================================================================
+CREATE OR ALTER PROCEDURE [dbo].[sp_DoctorDepartment_GetDropdownData]
+AS
+BEGIN
+    SELECT DoctorID, Name AS DoctorName FROM Doctor;
+
+    SELECT DepartmentID, DepartmentName FROM Department;
+END
+GO
+
+exec sp_DoctorDepartment_GetDropdownData
+
+--=========================================================================================
 
 --========================Patient=============================
 

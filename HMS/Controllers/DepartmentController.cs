@@ -6,12 +6,14 @@ namespace HMS.Controllers
 {
     public class DepartmentController : Controller
     {
+        private DepartmentActions actions = new DepartmentActions();
+
         public IActionResult Index()
         {
-            DepartmentActions departmentActions = new DepartmentActions();
-            List<Department> departmentlist = departmentActions.GetDepartment();
-            return View(departmentlist);
+            var departments = actions.GetDepartment();
+            return View(departments);
         }
+
         [HttpGet]
         public IActionResult DepartmentAdd()
         {
@@ -22,41 +24,31 @@ namespace HMS.Controllers
         public IActionResult DepartmentAdd(Department department)
         {
             department.UserID = 1;
-            DepartmentActions actions = new DepartmentActions();
             actions.InsertDepartment(department);
-
             TempData["Message"] = "Department added successfully!";
             return RedirectToAction("DepartmentAdd");
         }
+
         public IActionResult DeleteDepartment(int id)
         {
-            DepartmentActions actions = new DepartmentActions();
             actions.DeleteDepartment(id);
-            TempData["Message"] = "Department Deleted successfully!";
+            TempData["Message"] = "Department deleted successfully!";
             return RedirectToAction("Index");
         }
+
         [HttpGet]
         public IActionResult DepartmentEdit(int id)
         {
-            DepartmentActions actions = new DepartmentActions();
-            List<Department> departmentlist = actions.GetDepartment();
-            Department department = departmentlist.FirstOrDefault(d=>d.DepartmentID==id);
-
-            if (department == null) 
-            {
-                return NotFound();
-            }
-            return View(department);
+            var department = actions.GetDepartment().FirstOrDefault(d => d.DepartmentID == id);
+            return department == null ? NotFound() : View(department);
         }
+
         [HttpPost]
         public IActionResult DepartmentEdit(Department department)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(department);
-            }
+            if (!ModelState.IsValid) return View(department);
+
             department.UserID = 1;
-            DepartmentActions actions = new DepartmentActions();
             actions.updateDepartment(department);
             TempData["Message"] = "Department updated successfully!";
             return RedirectToAction("Index");

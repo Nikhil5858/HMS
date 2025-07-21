@@ -6,59 +6,55 @@ namespace HMS.Controllers
 {
     public class DoctorController : Controller
     {
+        private DoctorActions actions = new DoctorActions();
+
         public IActionResult Index()
         {
-            DoctorActions actions = new DoctorActions();
-            List<Doctor> doctorlist = actions.GetDoctors();
-            return View(doctorlist);
+            var doctors = actions.GetDoctors();
+            return View(doctors);
         }
+
         [HttpGet]
         public IActionResult DoctorAdd()
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult DoctorAdd(Doctor doctor)
         {
             doctor.UserID = 1;
-            DoctorActions doctorActions = new DoctorActions();
-            doctorActions.InsertDoctor(doctor);
-
-            TempData["Message"] = "Doctor Added Successfully";
+            actions.InsertDoctor(doctor);
+            TempData["Message"] = "Doctor added successfully!";
             return RedirectToAction("DoctorAdd");
         }
+
         [HttpGet]
         public IActionResult DoctorEdit(int id)
         {
-            DoctorActions doctorActions = new DoctorActions();
-            List<Doctor> doctorlist = doctorActions.GetDoctors();
-            Doctor doctor = doctorlist.FirstOrDefault(x=>x.DoctorID==id);
-
-            if (doctor == null)
-            {
-                return NotFound();
-            }
-            return View(doctor);
-        }
-        [HttpPost]
-        public IActionResult DoctorEdit(Doctor doctor)
-        {
+            var doctor = actions.GetDoctors().FirstOrDefault(x => x.DoctorID == id);
             if (!ModelState.IsValid)
             {
                 return View(doctor);
             }
+            return View(doctor);
+        }
+
+        [HttpPost]
+        public IActionResult DoctorEdit(Doctor doctor)
+        {
+            if (!ModelState.IsValid) return View(doctor);
+
             doctor.UserID = 1;
-            DoctorActions doctorActions = new DoctorActions();
-            doctorActions.DoctorUpdate(doctor);
-            TempData["Message"] = "Doctor Updated Successfully!";
+            actions.DoctorUpdate(doctor);
+            TempData["Message"] = "Doctor updated successfully!";
             return RedirectToAction("Index");
         }
+
         public IActionResult DoctorDelete(int id)
         {
-            DoctorActions actions = new DoctorActions();
             actions.DoctorDelete(id);
-
-            TempData["Message"] = "Doctor Deleted Successfully!";
+            TempData["Message"] = "Doctor deleted successfully!";
             return RedirectToAction("Index");
         }
     }

@@ -6,12 +6,14 @@ namespace HMS.Controllers
 {
     public class PatientController : Controller
     {
+        private PatientActions actions = new PatientActions();
+
         public IActionResult Index()
         {
-            PatientActions patientActions = new PatientActions();
-            List<Patient> patientlist = patientActions.GetPatients();
-            return View(patientlist);
+            List<Patient> patientList = actions.GetPatients();
+            return View(patientList);
         }
+
         [HttpGet]
         public IActionResult PatientAdd()
         {
@@ -22,23 +24,23 @@ namespace HMS.Controllers
         public IActionResult PatientAdd(Patient patient)
         {
             patient.UserID = 1;
-            PatientActions patientActions = new PatientActions();
-            patientActions.InsertPatient(patient);
+            actions.InsertPatient(patient);
 
-            TempData["Message"] = "Patient Added Succesfully";
+            TempData["Message"] = "Patient Added Successfully!";
             return RedirectToAction("PatientAdd");
         }
+
         [HttpGet]
         public IActionResult PatientEdit(int id)
         {
-            PatientActions patientActions = new PatientActions();
-            List<Patient> patientlist = patientActions.GetPatients();
-            Patient patient = patientlist.FirstOrDefault(p=>p.PatientID==id);
+            List<Patient> patientList = actions.GetPatients();
+            Patient patient = patientList.FirstOrDefault(p => p.PatientID == id);
 
-            if (patient == null) 
+            if (patient == null)
             {
                 return NotFound();
             }
+
             return View(patient);
         }
 
@@ -49,18 +51,19 @@ namespace HMS.Controllers
             {
                 return View(patient);
             }
-            patient.UserID=1;
-            PatientActions patientActions = new PatientActions();
-            patientActions.Patientupdate(patient);
+
+            patient.UserID = 1;
+            actions.Patientupdate(patient);
+
             TempData["Message"] = "Patient Updated Successfully!";
             return RedirectToAction("Index");
         }
+
         public IActionResult PatientDelete(int id)
         {
-            PatientActions patientAction = new PatientActions();
-            patientAction.PatientDelete(id);
+            actions.PatientDelete(id);
 
-            TempData["Message"] = "Patient Delete Succesfully";
+            TempData["Message"] = "Patient Deleted Successfully!";
             return RedirectToAction("Index");
         }
     }
