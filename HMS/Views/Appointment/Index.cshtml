@@ -1,4 +1,5 @@
-﻿<section class="table-components">
+﻿@model List<HMS.Models.Appointment>
+<section class="table-components">
     <div class="container-fluid">
         <div class="title-wrapper pt-30">
             <div class="row align-items-center">
@@ -12,6 +13,23 @@
                         <nav aria-label="breadcrumb">
                             <a href="/Appointment/AppointmentAdd" class="btn btn-primary ms-5">+ Add Appointment</a>
                         </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete this department?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <a id="confirmDeleteBtn" class="btn btn-danger">Delete</a>
                     </div>
                 </div>
             </div>
@@ -37,23 +55,29 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Dr. Emily Brown</td>
-                                        <td>Orthopedist</td>
-                                        <td>Test</td>
-                                        <td>Mike Wilson</td>
-                                        <td>mike.w@patient.com</td>
-                                        <td>01-04-2025 12:00 AM</td>
-                                        <td><span class="badge bg-warning text-dark ms-2">Pending</span></td>
-                                        <td>2d</td>
-                                        <td>xyz</td>
-                                        <td>
-                                            <div class="action">
-                                                <a asp-action="AppointmentEdit" asp-controller="Appointment" asp-route-id="1" ><i class="lni lni-pencil"></i></a>
-                                                <a asp-action="Delete" class="ms-3 text-danger"><i class="lni lni-trash-can"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    @foreach (var appoint in Model)
+                                    {
+                                        <tr>
+                                            <td>@appoint.DoctorName</td>
+                                            <td>@appoint.Specialization</td>
+                                            <td>@appoint.UserName</td>
+                                            <td>@appoint.PatientName</td>
+                                            <td>@appoint.Email</td>
+                                            <td>@appoint.AppointmentDate</td>
+                                            <td><span class="badge bg-warning text-dark ms-2">@appoint.AppointmentStatus</span></td>
+                                            <td>@appoint.Description</td>
+                                            <td>@appoint.SpecialRemarks</td>
+                                            <td>
+                                                <div class="action">
+                                                    <a asp-action="AppointmentEdit" asp-controller="Appointment" asp-route-id="@appoint.AppointmentID" ><i class="lni lni-pencil"></i></a>
+                                                     <a href="#" class="ms-2 text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                                       data-delete-url="@Url.Action("DeleteAppointment", "Appointment", new { id = appoint.AppointmentID})">
+                                                        <i class="lni lni-trash-can"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
                                 </tbody>
                             </table>
                         </div>
@@ -63,3 +87,12 @@
         </div>
     </div>
 </section>
+<script>
+        const openModel = document.getElementById('deleteModal');
+        const confirmBtn = document.getElementById('confirmDeleteBtn');
+            openModel.addEventListener('show.bs.modal', (event)=>{
+            const trigger = event.relatedTarget;
+            const deleteUrl = trigger.getAttribute('data-delete-url');
+            confirmBtn.setAttribute('href', deleteUrl);
+        });
+</script>

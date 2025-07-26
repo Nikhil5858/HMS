@@ -24,6 +24,8 @@ namespace HMS.CommonMethod_Class
                     list.Add(new DoctorDepartment
                     {
                         DoctorDepartmentID = Convert.ToInt32(reader["DoctorDepartmentID"]),
+                        DoctorID = Convert.ToInt32(reader["DoctorID"]),
+                        DepartmentID = Convert.ToInt32(reader["DepartmentID"]),
                         DoctorName = reader["DoctorName"].ToString(),
                         DepartmentName = reader["DepartmentName"].ToString()
                     });
@@ -94,7 +96,6 @@ namespace HMS.CommonMethod_Class
             return doctorDepartment;
         }
 
-
         public (List<Doctor> doctors,List<Department> departments) GetDoctorAndDepartment()
         {
             List<Doctor> doctors_list = new List<Doctor>();
@@ -132,5 +133,17 @@ namespace HMS.CommonMethod_Class
             }
             return (doctors_list,departments_list);
         }
+        public void DeleteDepartmentsByDoctorId(int doctorId)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                string query = "DELETE FROM DoctorDepartment WHERE DoctorID = @DoctorID";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@DoctorID", doctorId);
+                sqlConnection.Open();
+                sqlCommand.ExecuteNonQuery();
+            }
+        }
+
     }
 }

@@ -20,7 +20,11 @@ namespace HMS.Controllers
             var (doctors, departments) = actions.GetDoctorAndDepartment();
 
             ViewBag.DoctorList = new SelectList(doctors, "DoctorID", "Name");
-            ViewBag.DepartmentList = new SelectList(departments, "DepartmentID", "DepartmentName");
+            ViewBag.DepartmentList = departments.Select(d => new SelectListItem
+            {
+                Value = d.DepartmentID.ToString(),
+                Text = d.DepartmentName
+            }).ToList();
 
             return View();
         }
@@ -29,7 +33,18 @@ namespace HMS.Controllers
         public IActionResult DoctorDepartmentAdd(DoctorDepartment doctorDepartment)
         {
             doctorDepartment.UserID = 1;
-            actions.InsertDoctorDepartment(doctorDepartment);
+
+            foreach (var deptId in doctorDepartment.SelectedDepartmentID)
+            {
+                var data = new DoctorDepartment
+                {
+                    DoctorID = doctorDepartment.DoctorID,
+                    DepartmentID = deptId,
+                    UserID = doctorDepartment.UserID
+                };
+
+                actions.InsertDoctorDepartment(data);
+            }
 
             TempData["Message"] = "Doctor Department Added Successfully!";
             return RedirectToAction("DoctorDepartmentAdd");
@@ -40,18 +55,35 @@ namespace HMS.Controllers
         {
             DoctorDepartment doctorDepartment = actions.GetDoctorDepartmentById(id);
             var (doctors, departments) = actions.GetDoctorAndDepartment();
-
             ViewBag.DoctorList = new SelectList(doctors, "DoctorID", "Name");
-            ViewBag.DepartmentList = new SelectList(departments, "DepartmentID", "DepartmentName");
-
+            var selectedDepartments = actions.GetAllDepartmentAndDocotr()
+            .Where(dd => dd.DoctorID == doctorDepartment.DoctorID)
+            .Select(dd => dd.DepartmentID)
+            .ToList();
+            doctorDepartment.SelectedDepartmentID = selectedDepartments;
+            ViewBag.DepartmentList = departments.Select(d => new SelectListItem
+            {
+                Value = d.DepartmentID.ToString(),
+                Text = d.DepartmentName
+            }).ToList();
             return View(doctorDepartment);
         }
-
         [HttpPost]
         public IActionResult DoctorDepartmentEdit(DoctorDepartment doctorDepartment)
         {
             doctorDepartment.UserID = 1;
-            actions.UpdateDoctorDepartment(doctorDepartment);
+            actions.DeleteDepartmentsByDoctorId(doctorDepartment.DoctorID);
+            foreach (var deptId in doctorDepartment.SelectedDepartmentID)
+            {
+                var data = new DoctorDepartment
+                {
+                    DoctorID = doctorDepartment.DoctorID,
+                    DepartmentID = deptId,
+                    UserID = doctorDepartment.UserID
+                };
+
+                actions.InsertDoctorDepartment(data);
+            }
 
             TempData["Message"] = "Doctor Department Updated Successfully!";
             return RedirectToAction("Index");
@@ -59,7 +91,7 @@ namespace HMS.Controllers
 
         public IActionResult DoctorDepartmentDelete(int id)
         {
-            actions.DeleteDoctorDepartment(id);
+            actions.DeleteDoctorDepartment(id); 
 
             TempData["Message"] = "Doctor Department Deleted Successfully!";
             return RedirectToAction("Index");

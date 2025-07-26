@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HMS.CommonMethod_Class;
+using HMS.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HMS.Controllers
 {
     public class AppointmentController : Controller
     {
+        private AppointmentActions actions = new AppointmentActions();
         public IActionResult Index()
         {
-            return View();
+            List<Appointment> list = actions.GetAppointment();
+            return View(list);
         }
         public IActionResult AppointmentAdd()
         {

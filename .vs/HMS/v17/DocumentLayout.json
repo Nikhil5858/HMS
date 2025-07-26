@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "D:\\.Net\\HMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\doctordepartment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\doctordepartment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\doctordepartment\\doctordepartmentadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\doctordepartment\\doctordepartmentadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\models\\doctordepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\models\\doctordepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\doctordepartment\\doctordepartmentedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\doctordepartment\\doctordepartmentedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\controllers\\doctordepartmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\controllers\\doctordepartmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\models\\doctordepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\models\\doctordepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\commonmethod_class\\doctordepartmentactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\commonmethod_class\\doctordepartmentactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\doctordepartment\\doctordepartmentadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\doctordepartment\\doctordepartmentadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,32 +30,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\DoctorDepartment\\Index.cshtml",
-              "RelativeDocumentMoniker": "HMS\\Views\\DoctorDepartment\\Index.cshtml",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\DoctorDepartment\\Index.cshtml",
-              "RelativeToolTip": "HMS\\Views\\DoctorDepartment\\Index.cshtml",
-              "ViewState": "AgIAACwAAAAAAAAAAAAUwEYAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-24T13:29:03.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DoctorDepartmentAdd.cshtml",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\DoctorDepartment\\DoctorDepartmentAdd.cshtml",
-              "RelativeDocumentMoniker": "HMS\\Views\\DoctorDepartment\\DoctorDepartmentAdd.cshtml",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\DoctorDepartment\\DoctorDepartmentAdd.cshtml",
-              "RelativeToolTip": "HMS\\Views\\DoctorDepartment\\DoctorDepartmentAdd.cshtml",
-              "ViewState": "AgIAABoAAAAAAAAAAAAUwCQAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-24T13:29:00.934Z",
+              "DocumentIndex": 3,
+              "Title": "DoctorDepartmentActions.cs",
+              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\CommonMethod_Class\\DoctorDepartmentActions.cs",
+              "RelativeDocumentMoniker": "HMS\\CommonMethod_Class\\DoctorDepartmentActions.cs",
+              "ToolTip": "D:\\.Net\\HMS\\HMS\\CommonMethod_Class\\DoctorDepartmentActions.cs",
+              "RelativeToolTip": "HMS\\CommonMethod_Class\\DoctorDepartmentActions.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAswAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-26T13:30:11.504Z",
               "EditorCaption": ""
             },
             {
@@ -66,35 +53,48 @@
               "RelativeDocumentMoniker": "HMS\\Models\\DoctorDepartment.cs",
               "ToolTip": "D:\\.Net\\HMS\\HMS\\Models\\DoctorDepartment.cs",
               "RelativeToolTip": "HMS\\Models\\DoctorDepartment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA1wAkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T13:28:49.325Z",
+              "WhenOpened": "2025-07-26T13:29:26.769Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "DoctorDepartmentController.cs",
               "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Controllers\\DoctorDepartmentController.cs",
               "RelativeDocumentMoniker": "HMS\\Controllers\\DoctorDepartmentController.cs",
               "ToolTip": "D:\\.Net\\HMS\\HMS\\Controllers\\DoctorDepartmentController.cs",
               "RelativeToolTip": "HMS\\Controllers\\DoctorDepartmentController.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAADwvzIAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T13:28:45.852Z",
+              "WhenOpened": "2025-07-26T13:26:48.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DoctorDepartmentEdit.cshtml",
+              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\DoctorDepartment\\DoctorDepartmentEdit.cshtml",
+              "RelativeDocumentMoniker": "HMS\\Views\\DoctorDepartment\\DoctorDepartmentEdit.cshtml",
+              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\DoctorDepartment\\DoctorDepartmentEdit.cshtml",
+              "RelativeToolTip": "HMS\\Views\\DoctorDepartment\\DoctorDepartmentEdit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T13:21:26.358Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "DoctorDepartmentActions.cs",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\CommonMethod_Class\\DoctorDepartmentActions.cs",
-              "RelativeDocumentMoniker": "HMS\\CommonMethod_Class\\DoctorDepartmentActions.cs",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\CommonMethod_Class\\DoctorDepartmentActions.cs",
-              "RelativeToolTip": "HMS\\CommonMethod_Class\\DoctorDepartmentActions.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAUwHUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T13:28:42.929Z",
+              "Title": "DoctorDepartmentAdd.cshtml",
+              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\DoctorDepartment\\DoctorDepartmentAdd.cshtml",
+              "RelativeDocumentMoniker": "HMS\\Views\\DoctorDepartment\\DoctorDepartmentAdd.cshtml",
+              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\DoctorDepartment\\DoctorDepartmentAdd.cshtml",
+              "RelativeToolTip": "HMS\\Views\\DoctorDepartment\\DoctorDepartmentAdd.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAUwC4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-26T13:21:15.326Z",
               "EditorCaption": ""
             }
           ]
