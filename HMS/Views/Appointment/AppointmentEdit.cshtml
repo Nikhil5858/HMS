@@ -1,6 +1,13 @@
-﻿<div class="container-fluid">
+﻿@model HMS.Models.Appointment
+<div class="container-fluid">
     <div class="title-wrapper pt-30">
         <div class="row align-items-center">
+            @if (TempData["Message"] != null)
+            {
+                <div class="d-flex justify-content-end">
+                    <div class="alert alert-success" id="sucEditMessage">@TempData["Message"]</div>
+                </div>
+            }
             <div class="col-md-6">
                 <div class="title mb-30">
                     <h2>Edit Appointment</h2>
@@ -9,70 +16,69 @@
         </div>
     </div>
 </div>
-
 <div class="form-elements-wrapper">
-    <form method="post" asp-action="AppointmentEdit" asp-controller="Appointment">
-        <div class="card-style mb-30">
-            <input type="hidden" name="AppointmentID" />
+<form method="post" asp-action="AppointmentEdit" asp-controller="Appointment">
+    <input type="hidden" asp-for="AppointmentID" />
 
-            <div class="input-style-1">
-                <label>Doctor Name:</label>
-                <select name="DoctorId" class="form-select form-select-md" required>
-                    <option value="">-- Select Doctor --</option>
-                    <option value="1" selected>Dr. Emily Brown</option>
-                </select>
-            </div>
+    <div class="card-style mb-30">
 
-            <div class="input-style-1">
-                <label>Specialization:</label>
-                <input type="text" name="Specialization" placeholder="Enter Specialization" required />
-            </div>
-
-            <div class="input-style-1">
-                <label>Scheduled By:</label>
-                <input type="text" name="ScheduledBy" placeholder="Enter Scheduler Name" required />
-            </div>
-
-            <div class="input-style-1">
-                <label>Patient Name:</label>
-                <select name="PatientId" class="form-select form-select-md" required>
-                    <option value="">-- Select Patient --</option>
-                    <option value="1" selected>Mike Wilson</option>
-                </select>
-            </div>
-
-            <div class="input-style-1">
-                <label>Email:</label>
-                <input type="email" name="Email" placeholder="Enter Email" required />
-            </div>
-
-            <div class="input-style-1">
-                <label>Appointment Date:</label>
-                <input type="datetime-local" name="AppointmentDate" required />
-            </div>
-
-            <div class="input-style-1">
-                <label>Status:</label>
-                <select name="Status" class="form-select form-select-md" required>
-                    <option value="">-- Select Status --</option>
-                    <option value="Scheduled">Scheduled</option>
-                    <option value="Pending"  >Pending</option>
-                    <option value="Completed">Completed</option>
-                </select>
-            </div>
-
-            <div class="input-style-1">
-                <label>Description:</label>
-                <input type="text" name="Description" placeholder="Enter Description"  />
-            </div>
-
-            <div class="input-style-1">
-                <label>Remarks:</label>
-                <input type="text" name="Remarks" placeholder="Enter Remarks" />
-            </div>
-
-            <button type="submit" class="btn btn-primary mt-2">Update</button>
-            <a href="/Appointment" class="btn btn-secondary ms-3 mt-2">Cancel</a>
+        <div class="input-style-1">
+            <label>Doctor Name:</label>
+            <select asp-for="DoctorID" class="form-select form-select-md" asp-items="ViewBag.DoctorList"></select>
+            <span asp-validation-for="DoctorID" class="text-danger mt-2"></span>
         </div>
-    </form>
+
+        <div class="input-style-1">
+            <label>Patient Name:</label>
+            <select asp-for="PatientID" class="form-select form-select-md" asp-items="ViewBag.PatientList"></select>
+            <span asp-validation-for="PatientID" class="text-danger mt-2"></span>
+        </div>
+
+        <div class="input-style-1">
+            <label>Appointment Date:</label>
+            <input asp-for="AppointmentDate" type="datetime-local" class="form-control" />
+            <span asp-validation-for="AppointmentDate" class="text-danger mt-2"></span>
+        </div>
+
+        <div class="input-style-1">
+            <label>Status:</label>
+            <select asp-for="AppointmentStatus" class="form-select">
+                <option value="">-- Select Status --</option>
+                <option value="Scheduled">Scheduled</option>
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <span asp-validation-for="AppointmentStatus" class="text-danger mt-2"></span>
+        </div>
+
+        <div class="input-style-1">
+            <label>Description:</label>
+            <input asp-for="Description" type="text" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger mt-2"></span>
+        </div>
+
+        <div class="input-style-1">
+            <label>Remarks:</label>
+            <input asp-for="SpecialRemarks" type="text" class="form-control" />
+            <span asp-validation-for="SpecialRemarks" class="text-danger mt-2"></span>
+        </div>
+
+        <div class="input-style-1">
+            <label>Total Amount:</label>
+            <input asp-for="TotalConsultedAmount" type="number" class="form-control" />
+            <span asp-validation-for="TotalConsultedAmount" class="text-danger mt-2"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-2">Update</button>
+        <button class="btn btn-secondary ms-3 mt-2" type="reset">Cancel</button>
+    </div>
+</form>
 </div>
+<script>
+    setTimeout(() => {
+        var msg = document.getElementById("sucEditMessage");
+        if (msg) {
+            msg.style.display = "none";
+        }
+    }, 3000);
+</script>

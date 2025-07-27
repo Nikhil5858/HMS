@@ -22,7 +22,7 @@
         <div class="card-style mb-30">
             <div class="input-style-1">
                 <label>Doctor Name:</label>
-                <select asp-for="DoctorID" class="form-select form-select-md" >
+                <select asp-for="DoctorID" asp-items="ViewBag.DoctorList" class="form-select form-select-md">
                     <option value="">-- Select Doctor --</option>
                 </select>
                 <span asp-validation-for="DoctorID" class="text-danger mt-2"></span>
@@ -30,7 +30,7 @@
 
             <div class="input-style-1">
                 <label>Patient Name:</label>
-                <select asp-for="PatientID" class="form-select form-select-md">
+                <select asp-for="PatientID" asp-items="ViewBag.PatientList" class="form-select form-select-md">
                     <option value="">-- Select Patient --</option>
                 </select>
                 <span asp-validation-for="PatientID" class="text-danger mt-2"></span>
