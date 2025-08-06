@@ -18,7 +18,6 @@ namespace HMS.Models
 
         public SqlDataReader check_Login(string email, string password)
         {
-            //string query = "select Email,Password from [User] where Email=@email And Password=@password";
             SqlCommand sqlCommand = new SqlCommand("SP_User_Login", con);
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.Parameters.AddWithValue("@Email", email);

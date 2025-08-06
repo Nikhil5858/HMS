@@ -1,5 +1,5 @@
-﻿using HMS.Models;
-using Microsoft.AspNetCore.Authorization;
+﻿using HMS.CommonMethod_Class;
+using HMS.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 
@@ -7,13 +7,16 @@ namespace HMS.Controllers
 {
     public class AdminController : Controller
     {
+        private AdminDashboardActions actions = new AdminDashboardActions();
         public IActionResult Index()
         {
-            return View();
+            var appointment = actions.TodaysAppointment();
+            return View(appointment);
         }
         public IActionResult AdminDashboard()
         {
-            return View();
+            var appointment = actions.TodaysAppointment();
+            return View(appointment);
         }
         public IActionResult Login()
         {
@@ -27,12 +30,16 @@ namespace HMS.Controllers
             SqlDataReader result = databasemethod.check_Login(email, password);
             if (result.HasRows)
             {
-                return View("AdminDashboard");
+                var appointment = actions.TodaysAppointment();
+                return View("AdminDashboard", appointment); 
             }
-            else {
-                TempData["Message"] = "Invalid Email or Password!";
+
+            else
+            {
+                TempData["LoginMessage"] = "Invalid Email or Password!";
                 return View();
             }
         }
+
     }
 }

@@ -3,6 +3,12 @@
     <div class="container-fluid">
         <div class="title-wrapper pt-30">
             <div class="row align-items-center">
+                @if (TempData["DepartmentMessage"] != null)
+                {
+                    <div class="d-flex justify-content-end">
+                        <div class="alert alert-success" id="DepartmentMessage">@TempData["DepartmentMessage"]</div>
+                    </div>
+                }
                 <div class="col-md-6">
                     <div class="title mb-30">
                         <h2>Department List</h2>
@@ -80,9 +86,15 @@
 <script>
         const openModel = document.getElementById('deleteModal');
         const confirmBtn = document.getElementById('confirmDeleteBtn');
-            openModel.addEventListener('show.bs.modal', (event)=>{
-            const trigger = event.relatedTarget;
-            const deleteUrl = trigger.getAttribute('data-delete-url');
-            confirmBtn.setAttribute('href', deleteUrl);
+        openModel.addEventListener('show.bs.modal', (event)=>{
+        const trigger = event.relatedTarget;
+        const deleteUrl = trigger.getAttribute('data-delete-url');
+        confirmBtn.setAttribute('href', deleteUrl);
         });
+    setTimeout(() => {
+        var msg = document.getElementById("DepartmentMessage");
+        if (msg) {
+            msg.style.display = "none";
+        }
+    }, 3000);
 </script>

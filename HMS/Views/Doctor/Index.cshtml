@@ -3,6 +3,12 @@
     <div class="container-fluid">
         <div class="title-wrapper pt-30">
             <div class="row align-items-center">
+                @if (TempData["DoctorMessage"] != null)
+                {
+                    <div class="d-flex justify-content-end">
+                        <div class="alert alert-success" id="DoctorMessage">@TempData["DoctorMessage"]</div>
+                    </div>
+                }
                 <div class="col-md-6">
                     <div class="title mb-30">
                         <h2>Doctor List</h2>
@@ -66,9 +72,6 @@
                                                     <a asp-action="DoctorEdit" asp-controller="Doctor" asp-route-id="@doc.DoctorID" class="text-dark">
                                                         <i class="lni lni-pencil"></i>
                                                     </a>
-                                                    @*<a asp-action="DoctorDelete" asp-controller="Doctor" asp-route-id="@doc.DoctorID" class="ms-2 text-danger">
-                                                        <i class="lni lni-trash-can"></i>
-                                                    </a> *@
                                                      <a href="#" class="ms-2 text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                                        data-delete-url="@Url.Action("DoctorDelete", "Doctor", new { id = doc.DoctorID})">
                                                         <i class="lni lni-trash-can"></i>
@@ -94,4 +97,11 @@
         const deleteUrl = trigger.getAttribute('data-delete-url');
         confirmBtn.setAttribute('href', deleteUrl);
     });
+
+        setTimeout(() => {
+            var msg = document.getElementById("DoctorMessage");
+            if (msg) {
+                msg.style.display= "none";
+            }
+        }, 3000);
 </script>

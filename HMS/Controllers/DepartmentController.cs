@@ -25,14 +25,14 @@ namespace HMS.Controllers
         {
             department.UserID = 1;
             actions.InsertDepartment(department);
-            TempData["Message"] = "Department added successfully!";
-            return RedirectToAction("DepartmentAdd");
+            TempData["DepartmentMessage"] = "Department added successfully!";
+            return RedirectToAction("Index");
         }
 
         public IActionResult DeleteDepartment(int id)
         {
             actions.DeleteDepartment(id);
-            TempData["Message"] = "Department deleted successfully!";
+            TempData["DepartmentMessage"] = "Department deleted successfully!";
             return RedirectToAction("Index");
         }
 
@@ -50,7 +50,7 @@ namespace HMS.Controllers
 
             department.UserID = 1;
             actions.updateDepartment(department);
-            TempData["Message"] = "Department updated successfully!";
+            TempData["DepartmentMessage"] = "Department updated successfully!";
             return RedirectToAction("Index");
         }
     }

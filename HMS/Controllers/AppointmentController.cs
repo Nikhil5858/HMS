@@ -31,8 +31,8 @@ namespace HMS.Controllers
                 appointment.UserID = 1;
                 actions.InsertAppointment(appointment);
 
-                TempData["Message"] = "Appointment added successfully!";
-                return RedirectToAction("AppointmentAdd");
+                TempData["AppointmentMessage"] = "Appointment added successfully!";
+                return RedirectToAction("Index");
             }
             return View(appointment);
         }
@@ -54,7 +54,7 @@ namespace HMS.Controllers
             if (!ModelState.IsValid)
             {
                 actions.UpdateAppointment(appointment);
-                TempData["Message"] = "Appointment updated successfully!";
+                TempData["AppointmentMessage"] = "Appointment updated successfully!";
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +66,7 @@ namespace HMS.Controllers
         public IActionResult DeleteAppointment(int id)
         {
             actions.DeleteAppointment(id);
-            TempData["Message"] = "Appointment Deleted successfully!";
+            TempData["AppointmentMessage"] = "Appointment Deleted successfully!";
             return RedirectToAction("Index");
         }
     }

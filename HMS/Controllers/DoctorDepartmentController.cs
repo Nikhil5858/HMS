@@ -46,8 +46,8 @@ namespace HMS.Controllers
                 actions.InsertDoctorDepartment(data);
             }
 
-            TempData["Message"] = "Doctor Department Added Successfully!";
-            return RedirectToAction("DoctorDepartmentAdd");
+            TempData["DoctorDepartment"] = "Doctor Department Added Successfully!";
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -85,7 +85,7 @@ namespace HMS.Controllers
                 actions.InsertDoctorDepartment(data);
             }
 
-            TempData["Message"] = "Doctor Department Updated Successfully!";
+            TempData["DoctorDepartment"] = "Doctor Department Updated Successfully!";
             return RedirectToAction("Index");
         }
 
@@ -93,7 +93,7 @@ namespace HMS.Controllers
         {
             actions.DeleteDoctorDepartment(id); 
 
-            TempData["Message"] = "Doctor Department Deleted Successfully!";
+            TempData["DoctorDepartment"] = "Doctor Department Deleted Successfully!";
             return RedirectToAction("Index");
         }
     }

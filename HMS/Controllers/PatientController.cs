@@ -26,8 +26,8 @@ namespace HMS.Controllers
             patient.UserID = 1;
             actions.InsertPatient(patient);
 
-            TempData["Message"] = "Patient Added Successfully!";
-            return RedirectToAction("PatientAdd");
+            TempData["PatientMessage"] = "Patient Added Successfully!";
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -55,7 +55,7 @@ namespace HMS.Controllers
             patient.UserID = 1;
             actions.Patientupdate(patient);
 
-            TempData["Message"] = "Patient Updated Successfully!";
+            TempData["PatientMessage"] = "Patient Updated Successfully!";
             return RedirectToAction("Index");
         }
 
@@ -63,7 +63,7 @@ namespace HMS.Controllers
         {
             actions.PatientDelete(id);
 
-            TempData["Message"] = "Patient Deleted Successfully!";
+            TempData["PatientMessage"] = "Patient Deleted Successfully!";
             return RedirectToAction("Index");
         }
     }

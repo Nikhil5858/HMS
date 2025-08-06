@@ -3,12 +3,6 @@
 <div class="container-fluid">
     <div class="title-wrapper pt-30">
         <div class="row align-items-center">
-            @if (TempData["Message"] != null)
-            {
-                <div class="d-flex justify-content-end">
-                    <div class="alert alert-success" id="sucEditMessage">@TempData["Message"]</div>
-                </div>
-            }
             <div class="col-md-6">
                 <div class="title mb-30">
                     <h2>Edit Doctor Department</h2>
@@ -58,12 +52,3 @@
         </div>
     </form>
 </div>
-
-<script>
-    setTimeout(() => {
-        var msg = document.getElementById("sucEditMessage");
-        if (msg) {
-            msg.style.display = "none";
-        }
-    }, 3000);
-</script>
