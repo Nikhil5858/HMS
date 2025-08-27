@@ -7,7 +7,14 @@ namespace HMS.Controllers
 {
     public class AdminController : Controller
     {
-        private AdminDashboardActions actions = new AdminDashboardActions();
+        private readonly AdminDashboardActions actions;
+        private readonly DatabaseMethod databaseMethod;
+
+        public AdminController(AdminDashboardActions actions, DatabaseMethod databaseMethod)
+        {
+            this.actions = actions;
+            this.databaseMethod = databaseMethod;
+        }
         public IActionResult Index()
         {
             var appointment = actions.TodaysAppointment();
@@ -22,23 +29,26 @@ namespace HMS.Controllers
         {
             return View();
         }
-        
-        [HttpPost]
-        public IActionResult Login(string email,string password)
-        {
-            DatabaseMethod databasemethod = new DatabaseMethod();
-            SqlDataReader result = databasemethod.check_Login(email, password);
-            if (result.HasRows)
-            {
-                var appointment = actions.TodaysAppointment();
-                return View("AdminDashboard", appointment); 
-            }
 
-            else
+        [HttpPost]
+        public IActionResult Login(User user)
+        {
+            if (ModelState.IsValid)
             {
-                TempData["LoginMessage"] = "Invalid Email or Password!";
-                return View();
+                SqlDataReader result = databaseMethod.check_Login(user.Email, user.Password);
+
+                if (result.HasRows)
+                {
+                    var appointment = actions.TodaysAppointment();
+                    return View("AdminDashboard", appointment);
+                }
+                else
+                {
+                    TempData["LoginMessage"] = "Invalid Email or Password!";
+                    return View();
+                }
             }
+            return View();
         }
 
     }

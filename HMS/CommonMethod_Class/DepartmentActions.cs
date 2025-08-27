@@ -6,8 +6,11 @@ namespace HMS.CommonMethod_Class
 {
     public class DepartmentActions
     {
-        private string connection = "Data Source=DESKTOP-A45M567\\SQLEXPRESS01;Initial Catalog=HMS;Integrated Security=True;Encrypt=False";
-
+        private readonly string connection;
+        public DepartmentActions(IConfiguration configuration)
+        {
+            connection = configuration.GetConnectionString("ConnectionString");
+        }
         public void InsertDepartment(Department department)
         {
             using (SqlConnection sqlConnection = new SqlConnection(connection))

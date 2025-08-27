@@ -7,7 +7,11 @@ namespace HMS.Controllers
 {
     public class AppointmentController : Controller
     {
-        private AppointmentActions actions = new AppointmentActions();
+        private readonly AppointmentActions actions;
+        public AppointmentController(AppointmentActions actions)
+        {
+            this.actions = actions;
+        }
         public IActionResult Index()
         {
             List<Appointment> list = actions.GetAppointment();

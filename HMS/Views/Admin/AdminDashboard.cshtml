@@ -71,7 +71,6 @@
                                         <th style="min-width: 150px;">Patient</th>
                                         <th style="min-width: 200px;">Date</th>
                                         <th style="min-width: 200px;">Status</th>
-                                        <th style="min-width: 100px;">Chnage Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -90,16 +89,6 @@
                                                         todayappointment.AppointmentStatus == "Cancelled" ? "bg-danger" : "bg-secondary")">
                                                         @todayappointment.AppointmentStatus
                                                     </span>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex align-items-center gap-2">
-                                                        <select class="form-select form-select-sm w-auto">
-                                                            <option value="0" selected="@(todayappointment.AppointmentStatus == "Pending")">Pending</option>
-                                                            <option value="1" selected="@(todayappointment.AppointmentStatus == "Completed")">Completed</option>
-                                                            <option value="2" selected="@(todayappointment.AppointmentStatus == "Cancelled")">Cancelled</option>
-                                                        </select>
-                                                        <a class="btn btn-primary">Update</a>
-                                                    </div>
                                                 </td>
                                             </tr>
                                         }

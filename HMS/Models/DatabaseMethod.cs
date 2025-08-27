@@ -1,33 +1,30 @@
 ﻿using Microsoft.Data.SqlClient;
-using Microsoft.Data;
 using System.Data;
- 
 
 namespace HMS.Models
 {
     public class DatabaseMethod
     {
-        string connection = "Data Source=DESKTOP-A45M567\\SQLEXPRESS01;Initial Catalog=HMS;Integrated Security=True;Encrypt=False";
-        
-        SqlConnection? con = null;
+        private readonly string connection;
 
-        public DatabaseMethod()
+        public DatabaseMethod(IConfiguration configuration)
         {
-            con = new SqlConnection(connection);
+            connection = configuration.GetConnectionString("HMSConnection");
         }
 
         public SqlDataReader check_Login(string email, string password)
         {
-            SqlCommand sqlCommand = new SqlCommand("SP_User_Login", con);
-            sqlCommand.CommandType = CommandType.StoredProcedure;
-            sqlCommand.Parameters.AddWithValue("@Email", email);
-            sqlCommand.Parameters.AddWithValue("@Password", password);
-            if (con.State != ConnectionState.Open)
+            using (SqlConnection con = new SqlConnection(connection))
             {
+                SqlCommand sqlCommand = new SqlCommand("SP_User_Login", con);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("@Email", email);
+                sqlCommand.Parameters.AddWithValue("@Password", password);
+
                 con.Open();
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                return sqlDataReader;
             }
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-            return sqlDataReader;
         }
     }
 }

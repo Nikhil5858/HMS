@@ -6,8 +6,11 @@ namespace HMS.CommonMethod_Class
 {
     public class DoctorActions
     {
-        private string connection = "Data Source=DESKTOP-A45M567\\SQLEXPRESS01;Initial Catalog=HMS;Integrated Security=True;Encrypt=False";
-
+        private readonly string connection;
+        public DoctorActions(IConfiguration configuration)
+        {
+            connection = configuration.GetConnectionString("ConnectionString");
+        }
         public void InsertDoctor(Doctor doctor)
         {
             using (SqlConnection sqlConnection = new SqlConnection(connection))

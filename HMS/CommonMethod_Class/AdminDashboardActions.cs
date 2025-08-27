@@ -6,8 +6,11 @@ namespace HMS.CommonMethod_Class
 {
     public class AdminDashboardActions
     {
-        private string connection = "Data Source=DESKTOP-A45M567\\SQLEXPRESS01;Initial Catalog=HMS;Integrated Security=True;Encrypt=False";
-
+        private readonly string connection;
+        public AdminDashboardActions(IConfiguration configuration)
+        {
+            connection = configuration.GetConnectionString("ConnectionString");
+        }
         public List<AdminDashBoard> TodaysAppointment()
         {
             List<AdminDashBoard> list = new List<AdminDashBoard>();

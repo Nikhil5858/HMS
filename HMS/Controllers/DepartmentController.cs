@@ -6,7 +6,11 @@ namespace HMS.Controllers
 {
     public class DepartmentController : Controller
     {
-        private DepartmentActions actions = new DepartmentActions();
+        private readonly DepartmentActions actions;
+        public DepartmentController(DepartmentActions actions)
+        {
+            this.actions = actions;
+        }
 
         public IActionResult Index()
         {

@@ -6,7 +6,11 @@ namespace HMS.Controllers
 {
     public class PatientController : Controller
     {
-        private PatientActions actions = new PatientActions();
+        private readonly PatientActions actions;
+        public PatientController(PatientActions actions)
+        {
+            this.actions = actions;
+        }
 
         public IActionResult Index()
         {
