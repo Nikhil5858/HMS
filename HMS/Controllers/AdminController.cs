@@ -35,9 +35,9 @@ namespace HMS.Controllers
         {
             if (ModelState.IsValid)
             {
-                SqlDataReader result = databaseMethod.check_Login(user.Email, user.Password);
+                bool isLoginValid = databaseMethod.check_Login(user.Email, user.Password);
 
-                if (result.HasRows)
+                if (isLoginValid)
                 {
                     var appointment = actions.TodaysAppointment();
                     return View("AdminDashboard", appointment);

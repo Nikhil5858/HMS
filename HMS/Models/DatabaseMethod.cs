@@ -9,21 +9,25 @@ namespace HMS.Models
 
         public DatabaseMethod(IConfiguration configuration)
         {
-            connection = configuration.GetConnectionString("HMSConnection");
+            connection = configuration.GetConnectionString("ConnectionString");
         }
-
-        public SqlDataReader check_Login(string email, string password)
+        public bool check_Login(string email, string password)
         {
             using (SqlConnection con = new SqlConnection(connection))
             {
-                SqlCommand sqlCommand = new SqlCommand("SP_User_Login", con);
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("@Email", email);
-                sqlCommand.Parameters.AddWithValue("@Password", password);
+                using (SqlCommand sqlCommand = new SqlCommand("SP_User_Login", con))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Email", email);
+                    sqlCommand.Parameters.AddWithValue("@Password", password);
 
-                con.Open();
-                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader(CommandBehavior.CloseConnection);
-                return sqlDataReader;
+                    con.Open();
+
+                    using (SqlDataReader sqlDataReader = sqlCommand.ExecuteReader())
+                    {
+                        return sqlDataReader.HasRows;
+                    }
+                }
             }
         }
     }
