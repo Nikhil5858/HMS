@@ -15,12 +15,12 @@
       "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\commonmethod_class\\sessioncheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,20 +34,20 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "HMS\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "HMS\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAiwJ8AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAqwLcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-09T13:53:53.799Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\Admin\\Login.cshtml",
               "RelativeDocumentMoniker": "HMS\\Views\\Admin\\Login.cshtml",
@@ -64,9 +64,9 @@
               "Title": "SessionCheck.cs",
               "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\CommonMethod_Class\\SessionCheck.cs",
               "RelativeDocumentMoniker": "HMS\\CommonMethod_Class\\SessionCheck.cs",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\CommonMethod_Class\\SessionCheck.cs",
-              "RelativeToolTip": "HMS\\CommonMethod_Class\\SessionCheck.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAANAAAAAAAAAA==",
+              "ToolTip": "D:\\.Net\\HMS\\HMS\\CommonMethod_Class\\SessionCheck.cs*",
+              "RelativeToolTip": "HMS\\CommonMethod_Class\\SessionCheck.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-08T17:32:17.844Z",
               "EditorCaption": ""
@@ -79,7 +79,7 @@
               "RelativeDocumentMoniker": "HMS\\Models\\DatabaseMethod.cs",
               "ToolTip": "D:\\.Net\\HMS\\HMS\\Models\\DatabaseMethod.cs",
               "RelativeToolTip": "HMS\\Models\\DatabaseMethod.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAcwBkAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-04T07:24:13.743Z",
               "EditorCaption": ""
@@ -92,7 +92,7 @@
               "RelativeDocumentMoniker": "HMS\\Controllers\\AdminController.cs",
               "ToolTip": "D:\\.Net\\HMS\\HMS\\Controllers\\AdminController.cs",
               "RelativeToolTip": "HMS\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAcwDgAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-04T07:10:50.849Z",
               "EditorCaption": ""

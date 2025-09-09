@@ -9,13 +9,18 @@ namespace HMS.CommonMethod_Class
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             bool isAnonymous = context.ActionDescriptor.EndpointMetadata
-                                    .OfType<AllowAnonymousAttribute>().Any();
-
+                                        .OfType<AllowAnonymousAttribute>().Any();
             if (isAnonymous)
             {
-                return;
+                return; 
             }
 
+            int? userId = context.HttpContext.Session.GetInt32("UserId");
+
+            if (userId == null)
+            {
+                context.Result = new RedirectToActionResult("Login", "Admin", null);
+            }
 
             base.OnActionExecuting(context);
         }

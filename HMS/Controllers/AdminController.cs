@@ -35,6 +35,7 @@ namespace HMS.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult Login(User user)
         {
             User? loggedInUser = databaseMethod.check_Login(user.Email, user.Password);
