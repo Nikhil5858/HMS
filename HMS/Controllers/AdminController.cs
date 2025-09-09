@@ -1,10 +1,11 @@
 ﻿using HMS.CommonMethod_Class;
 using HMS.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
 
 namespace HMS.Controllers
 {
+    [SessionCheck]
     public class AdminController : Controller
     {
         private readonly AdminDashboardActions actions;
@@ -20,35 +21,40 @@ namespace HMS.Controllers
             var appointment = actions.TodaysAppointment();
             return View(appointment);
         }
+        [Route("/Admin/AdminDashboard")]
         public IActionResult AdminDashboard()
         {
             var appointment = actions.TodaysAppointment();
             return View(appointment);
         }
+
+        [AllowAnonymous]
         public IActionResult Login()
-        {
+        {            
             return View();
         }
 
         [HttpPost]
         public IActionResult Login(User user)
         {
-            if (ModelState.IsValid)
-            {
-                bool isLoginValid = databaseMethod.check_Login(user.Email, user.Password);
+            User? loggedInUser = databaseMethod.check_Login(user.Email, user.Password);
 
-                if (isLoginValid)
-                {
-                    var appointment = actions.TodaysAppointment();
-                    return View("AdminDashboard", appointment);
-                }
-                else
-                {
-                    TempData["LoginMessage"] = "Invalid Email or Password!";
-                    return View();
-                }
+            if (loggedInUser != null)
+            {
+                HttpContext.Session.SetInt32("UserId", loggedInUser.UserId);
+                return RedirectToAction("AdminDashboard","Admin");
             }
-            return View();
+            else
+            {
+                ViewData["LoginMessage"] = "Invalid Email or Password!";
+                return View();
+            }
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Admin");
         }
 
     }

@@ -6,7 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddSession();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); 
+    options.Cookie.HttpOnly = true; 
+    options.Cookie.IsEssential = true; 
+});
+
 builder.Services.AddScoped<DatabaseMethod>();
 builder.Services.AddScoped<AdminDashboardActions>();
 builder.Services.AddScoped<AppointmentActions>();
@@ -25,11 +32,8 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
-
-app.UseAuthorization();
-
 app.UseSession();
-app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",

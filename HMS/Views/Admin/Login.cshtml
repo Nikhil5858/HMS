@@ -18,11 +18,12 @@
             <p class="text-center text-muted mb-4">Welcome back! Please enter your credentials.</p>
 
             <form asp-action="Login" method="post">
+
                 <div class="mb-3">
                     <label asp-for="Email" class="form-label fw-bold"></label>
                     <div class="input-group rounded-3">
                         <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
-                        <input asp-for="Email" class="form-control" placeholder="Your Email" />
+                        <input asp-for="Email" class="form-control" placeholder="Your Email" required />
                     </div>
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
@@ -31,7 +32,7 @@
                     <label asp-for="Password" class="form-label fw-bold"></label>
                     <div class="input-group rounded-3">
                         <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-                        <input asp-for="Password" type="password" class="form-control" placeholder="Your Password" />
+                        <input asp-for="Password" type="password" class="form-control" placeholder="Your Password" required />
                     </div>
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
@@ -42,20 +43,19 @@
                     </button>
                 </div>
 
-                @if (TempData["LoginMessage"] != null)
+                @if (ViewData["LoginMessage"] != null)
                 {
                     <div class="alert alert-danger mt-3" id="WrnMessage" role="alert">
-                        @TempData["LoginMessage"]
+                        @ViewData["LoginMessage"]
                     </div>
                 }
             </form>
         </div>
     </div>
-
+        
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     <script>
         setTimeout(() => {
             var msg = document.getElementById("WrnMessage");
@@ -64,4 +64,5 @@
             }
         }, 3000);
     </script>
+    @await Html.PartialAsync("_ValidationScriptsPartial")
 </body>

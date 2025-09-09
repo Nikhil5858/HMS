@@ -11,8 +11,10 @@ namespace HMS.Models
         {
             connection = configuration.GetConnectionString("ConnectionString");
         }
-        public bool check_Login(string email, string password)
+
+        public User? check_Login(string email, string password)
         {
+            User? user = null;
             using (SqlConnection con = new SqlConnection(connection))
             {
                 using (SqlCommand sqlCommand = new SqlCommand("SP_User_Login", con))
@@ -25,10 +27,17 @@ namespace HMS.Models
 
                     using (SqlDataReader sqlDataReader = sqlCommand.ExecuteReader())
                     {
-                        return sqlDataReader.HasRows;
+                        if (sqlDataReader.Read())
+                        {
+                            user = new User
+                            {
+                                UserId = Convert.ToInt32(sqlDataReader["UserId"]),
+                            };
+                        }
                     }
                 }
             }
+            return user; 
         }
     }
 }
