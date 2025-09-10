@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HMS.Controllers
 {
+    [SessionCheck]
     public class PatientController : Controller
     {
         private readonly PatientActions actions;
@@ -27,7 +28,14 @@ namespace HMS.Controllers
         [HttpPost]
         public IActionResult PatientAdd(Patient patient)
         {
-            patient.UserID = 1;
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            if (userId == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+
+            patient.UserID = userId.Value;
+
             actions.InsertPatient(patient);
 
             TempData["PatientMessage"] = "Patient Added Successfully!";
@@ -56,7 +64,15 @@ namespace HMS.Controllers
                 return View(patient);
             }
 
-            patient.UserID = 1;
+            int? userId = HttpContext.Session.GetInt32("UserId");
+
+            if (userId == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+
+            patient.UserID = userId.Value;
+
             actions.Patientupdate(patient);
 
             TempData["PatientMessage"] = "Patient Updated Successfully!";

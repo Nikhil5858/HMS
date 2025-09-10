@@ -36,7 +36,13 @@ namespace HMS.Controllers
         [HttpPost]
         public IActionResult DoctorDepartmentAdd(DoctorDepartment doctorDepartment)
         {
-            doctorDepartment.UserID = 1;
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            if (userId == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+
+            doctorDepartment.UserID = userId.Value;
 
             foreach (var deptId in doctorDepartment.SelectedDepartmentID)
             {
@@ -75,7 +81,14 @@ namespace HMS.Controllers
         [HttpPost]
         public IActionResult DoctorDepartmentEdit(DoctorDepartment doctorDepartment)
         {
-            doctorDepartment.UserID = 1;
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            if (userId == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+
+            doctorDepartment.UserID = userId.Value;
+
             actions.DeleteDepartmentsByDoctorId(doctorDepartment.DoctorID);
             foreach (var deptId in doctorDepartment.SelectedDepartmentID)
             {

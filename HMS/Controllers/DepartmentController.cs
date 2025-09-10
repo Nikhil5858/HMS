@@ -1,6 +1,7 @@
 ﻿using HMS.CommonMethod_Class;
 using HMS.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Numerics;
 
 namespace HMS.Controllers
 {
@@ -27,7 +28,14 @@ namespace HMS.Controllers
         [HttpPost]
         public IActionResult DepartmentAdd(Department department)
         {
-            department.UserID = 1;
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            if (userId == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+
+            department.UserID = userId.Value;
+
             actions.InsertDepartment(department);
             TempData["DepartmentMessage"] = "Department added successfully!";
             return RedirectToAction("Index");
@@ -52,7 +60,14 @@ namespace HMS.Controllers
         {
             if (!ModelState.IsValid) return View(department);
 
-            department.UserID = 1;
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            if (userId == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+
+            department.UserID = userId.Value;
+
             actions.updateDepartment(department);
             TempData["DepartmentMessage"] = "Department updated successfully!";
             return RedirectToAction("Index");

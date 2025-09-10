@@ -32,7 +32,14 @@ namespace HMS.Controllers
         {
             if (!ModelState.IsValid)
             {
-                appointment.UserID = 1;
+                int? userId = HttpContext.Session.GetInt32("UserId");
+                if (userId == null)
+                {
+                    return RedirectToAction("Login", "Admin");
+                }
+
+                appointment.UserID = userId.Value;
+
                 actions.InsertAppointment(appointment);
 
                 TempData["AppointmentMessage"] = "Appointment added successfully!";

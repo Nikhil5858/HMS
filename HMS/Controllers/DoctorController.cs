@@ -27,7 +27,14 @@ namespace HMS.Controllers
         [HttpPost]
         public IActionResult DoctorAdd(Doctor doctor)
         {
-            doctor.UserID = 1;
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            if (userId == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+
+            doctor.UserID = userId.Value;
+
             actions.InsertDoctor(doctor);
             TempData["DoctorMessage"] = "Doctor added successfully!";
             return RedirectToAction("Index");
@@ -49,7 +56,14 @@ namespace HMS.Controllers
         {
             if (!ModelState.IsValid) return View(doctor);
 
-            doctor.UserID = 1;
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            if (userId == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+
+            doctor.UserID = userId.Value;
+
             actions.DoctorUpdate(doctor);
             TempData["DoctorMessage"] = "Doctor updated successfully!";
             return RedirectToAction("Index");
