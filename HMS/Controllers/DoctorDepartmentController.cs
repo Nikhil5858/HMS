@@ -36,6 +36,9 @@ namespace HMS.Controllers
         [HttpPost]
         public IActionResult DoctorDepartmentAdd(DoctorDepartment doctorDepartment)
         {
+            try
+            {
+
             int? userId = HttpContext.Session.GetInt32("UserId");
             if (userId == null)
             {
@@ -55,62 +58,95 @@ namespace HMS.Controllers
 
                 actions.InsertDoctorDepartment(data);
             }
-
-            TempData["DoctorDepartment"] = "Doctor Department Added Successfully!";
+                TempData["DoctorDepartment"] = "Doctor Department Added Successfully!";
+            }
+            catch (Exception ex)
+            {
+                TempData["DoctorDepartment"] = "Something Went Wrong!";
+            }
             return RedirectToAction("Index");
         }
 
         [HttpGet]
         public IActionResult DoctorDepartmentEdit(int id)
         {
-            DoctorDepartment doctorDepartment = actions.GetDoctorDepartmentById(id);
-            var (doctors, departments) = actions.GetDoctorAndDepartment();
-            ViewBag.DoctorList = new SelectList(doctors, "DoctorID", "Name");
-            var selectedDepartments = actions.GetAllDepartmentAndDocotr()
-            .Where(dd => dd.DoctorID == doctorDepartment.DoctorID)
-            .Select(dd => dd.DepartmentID)
-            .ToList();
-            doctorDepartment.SelectedDepartmentID = selectedDepartments;
-            ViewBag.DepartmentList = departments.Select(d => new SelectListItem
+            try
             {
-                Value = d.DepartmentID.ToString(),
-                Text = d.DepartmentName
-            }).ToList();
-            return View(doctorDepartment);
+                DoctorDepartment doctorDepartment = actions.GetDoctorDepartmentById(id);
+                if (doctorDepartment == null)
+                {
+                    TempData["DoctorDepartment"] = "Something Went Wrong!";
+                    return RedirectToAction("Index");
+                }
+
+                var (doctors, departments) = actions.GetDoctorAndDepartment();
+                ViewBag.DoctorList = new SelectList(doctors, "DoctorID", "Name", doctorDepartment.DoctorID);
+
+                var selectedDepartments = actions.GetAllDepartmentAndDocotr()
+                    .Where(dd => dd.DoctorID == doctorDepartment.DoctorID)
+                    .Select(dd => dd.DepartmentID)
+                    .ToList();
+                doctorDepartment.SelectedDepartmentID = selectedDepartments;
+
+                ViewBag.DepartmentList = departments.Select(d => new SelectListItem
+                {
+                    Value = d.DepartmentID.ToString(),
+                    Text = d.DepartmentName
+                }).ToList();
+
+                return View(doctorDepartment);
+            }
+            catch (Exception ex)
+            {
+                TempData["DoctorDepartment"] = "Something Went Wrong!";
+                return RedirectToAction("Index");
+            }
         }
         [HttpPost]
         public IActionResult DoctorDepartmentEdit(DoctorDepartment doctorDepartment)
         {
-            int? userId = HttpContext.Session.GetInt32("UserId");
-            if (userId == null)
+            try
             {
-                return RedirectToAction("Login", "Admin");
-            }
-
-            doctorDepartment.UserID = userId.Value;
-
-            actions.DeleteDepartmentsByDoctorId(doctorDepartment.DoctorID);
-            foreach (var deptId in doctorDepartment.SelectedDepartmentID)
-            {
-                var data = new DoctorDepartment
+                int? userId = HttpContext.Session.GetInt32("UserId");
+                if (userId == null)
                 {
-                    DoctorID = doctorDepartment.DoctorID,
-                    DepartmentID = deptId,
-                    UserID = doctorDepartment.UserID
-                };
+                    return RedirectToAction("Login", "Admin");
+                }
+                doctorDepartment.UserID = userId.Value;
 
-                actions.InsertDoctorDepartment(data);
+                actions.DeleteDepartmentsByDoctorId(doctorDepartment.DoctorID);
+
+                    foreach (var deptId in doctorDepartment.SelectedDepartmentID)
+                    {
+                        var data = new DoctorDepartment
+                        {
+                            DoctorID = doctorDepartment.DoctorID,
+                            DepartmentID = deptId,
+                            UserID = doctorDepartment.UserID
+                        };
+                        actions.InsertDoctorDepartment(data);
+                    }
+
+                TempData["DoctorDepartment"] = "Doctor Department Updated Successfully!";
             }
-
-            TempData["DoctorDepartment"] = "Doctor Department Updated Successfully!";
+            catch (Exception ex)
+            {
+                TempData["DoctorDepartment"] = "Something Went Wrong!";
+            }
             return RedirectToAction("Index");
         }
 
         public IActionResult DoctorDepartmentDelete(int id)
         {
-            actions.DeleteDoctorDepartment(id); 
-
-            TempData["DoctorDepartment"] = "Doctor Department Deleted Successfully!";
+            try
+            {
+                actions.DeleteDoctorDepartment(id);
+                TempData["DoctorDepartment"] = "Something Went Wrong!";
+            }
+            catch (Exception ex)
+            {
+                TempData["DoctorDepartment"] = "Something Went Wrong!";
+            }
             return RedirectToAction("Index");
         }
     }

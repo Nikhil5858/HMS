@@ -28,62 +28,86 @@ namespace HMS.Controllers
         [HttpPost]
         public IActionResult PatientAdd(Patient patient)
         {
-            int? userId = HttpContext.Session.GetInt32("UserId");
-            if (userId == null)
+            try
             {
-                return RedirectToAction("Login", "Admin");
+                int? userId = HttpContext.Session.GetInt32("UserId");
+                if (userId == null)
+                {
+                    return RedirectToAction("Login", "Admin");
+                }
+
+                patient.UserID = userId.Value;
+                actions.InsertPatient(patient);
+
+                TempData["PatientMessage"] = "Patient Added Successfully!";
             }
-
-            patient.UserID = userId.Value;
-
-            actions.InsertPatient(patient);
-
-            TempData["PatientMessage"] = "Patient Added Successfully!";
+            catch (Exception ex)
+            {
+                TempData["PatientMessage"] = "Something Went Wrong!";
+            }
             return RedirectToAction("Index");
         }
 
         [HttpGet]
         public IActionResult PatientEdit(int id)
         {
-            List<Patient> patientList = actions.GetPatients();
-            Patient patient = patientList.FirstOrDefault(p => p.PatientID == id);
-
-            if (patient == null)
+            try
             {
-                return NotFound();
-            }
+                Patient? patient = actions.GetPatients().FirstOrDefault(p => p.PatientID == id);
 
-            return View(patient);
+                if (patient == null)
+                {
+                    TempData["PatientMessage"] = "Patient not found.";
+                    return RedirectToAction("Index");
+                }
+                return View(patient);
+            }
+            catch (Exception ex)
+            {
+                TempData["PatientMessage"] = "Something Went Wrong!";
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpPost]
         public IActionResult PatientEdit(Patient patient)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return View(patient);
+                if (!ModelState.IsValid)
+                {
+                    return View(patient);
+                }
+
+                int? userId = HttpContext.Session.GetInt32("UserId");
+                if (userId == null)
+                {
+                    return RedirectToAction("Login", "Admin");
+                }
+
+                patient.UserID = userId.Value;
+                actions.Patientupdate(patient);
+
+                TempData["PatientMessage"] = "Patient Updated Successfully!";
             }
-
-            int? userId = HttpContext.Session.GetInt32("UserId");
-
-            if (userId == null)
+            catch (Exception ex)
             {
-                return RedirectToAction("Login", "Admin");
+                TempData["PatientMessage"] = "Something Went Wrong!";
             }
-
-            patient.UserID = userId.Value;
-
-            actions.Patientupdate(patient);
-
-            TempData["PatientMessage"] = "Patient Updated Successfully!";
             return RedirectToAction("Index");
         }
 
         public IActionResult PatientDelete(int id)
         {
-            actions.PatientDelete(id);
-
-            TempData["PatientMessage"] = "Patient Deleted Successfully!";
+            try
+            {
+                actions.PatientDelete(id);
+                TempData["PatientMessage"] = "Patient Deleted Successfully!";
+            }
+            catch (Exception ex)
+            {
+                TempData["PatientMessage"] = "Something Went Wrong!";
+            }
             return RedirectToAction("Index");
         }
     }

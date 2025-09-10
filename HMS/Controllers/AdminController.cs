@@ -18,14 +18,30 @@ namespace HMS.Controllers
         }
         public IActionResult Index()
         {
-            var appointment = actions.TodaysAppointment();
-            return View(appointment);
+            try
+            {
+                var appointment = actions.TodaysAppointment();
+                return View(appointment);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "Something Went Wrong";
+                return View(new List<Appointment>());
+            }
         }
         [Route("/Admin/AdminDashboard")]
         public IActionResult AdminDashboard()
         {
-            var appointment = actions.TodaysAppointment();
-            return View(appointment);
+            try
+            {
+                var appointment = actions.TodaysAppointment();
+                return View(appointment);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "Something Went Wrong";
+                return View(new List<Appointment>());
+            }
         }
 
         [AllowAnonymous]
@@ -38,17 +54,26 @@ namespace HMS.Controllers
         [AllowAnonymous]
         public IActionResult Login(User user)
         {
-            User? loggedInUser = databaseMethod.check_Login(user.Email, user.Password);
+            try
+            {
 
-            if (loggedInUser != null)
-            {
-                HttpContext.Session.SetInt32("UserId", loggedInUser.UserId);
-                return RedirectToAction("AdminDashboard","Admin");
+                User? loggedInUser = databaseMethod.check_Login(user.Email, user.Password);
+
+                if (loggedInUser != null)
+                {
+                    HttpContext.Session.SetInt32("UserId", loggedInUser.UserId);
+                    return RedirectToAction("AdminDashboard","Admin");
+                }
+                else
+                {
+                    ViewData["LoginMessage"] = "Invalid Email or Password!";
+                    return View();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                ViewData["LoginMessage"] = "Invalid Email or Password!";
-                return View();
+                ViewData["LoginMessage"] = "Something Went Wrong";
+                return View(user);
             }
         }
 
