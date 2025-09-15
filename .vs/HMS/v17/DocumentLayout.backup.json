@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\.Net\\HMS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\admin\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\admin\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\commonmethod_class\\admindashboardactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\commonmethod_class\\admindashboardactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\views\\appointment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\views\\appointment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|d:\\.net\\hms\\hms\\commonmethod_class\\appointmentactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C967F41-E1E7-4719-8EED-63ABF10B3060}|HMS\\HMS.csproj|solutionrelative:hms\\commonmethod_class\\appointmentactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\Appointment\\Index.cshtml",
-              "RelativeDocumentMoniker": "HMS\\Views\\Appointment\\Index.cshtml",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\Appointment\\Index.cshtml",
-              "RelativeToolTip": "HMS\\Views\\Appointment\\Index.cshtml",
-              "ViewState": "AgIAABoAAAAAAAAAAAAqwCcAAABcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-15T11:40:12.231Z",
+              "DocumentIndex": 1,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "HMS\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\.Net\\HMS\\HMS\\Controllers\\AdminController.cs*",
+              "RelativeToolTip": "HMS\\Controllers\\AdminController.cs*",
+              "ViewState": "AgIAACIAAAAAAAAAAAAqwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T12:32:47.283Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Appointment.cs",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Models\\Appointment.cs",
-              "RelativeDocumentMoniker": "HMS\\Models\\Appointment.cs",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Models\\Appointment.cs",
-              "RelativeToolTip": "HMS\\Models\\Appointment.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAkwCsAAAAAAAAAAAAAAA==",
+              "Title": "AdminDashboardActions.cs",
+              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\CommonMethod_Class\\AdminDashboardActions.cs",
+              "RelativeDocumentMoniker": "HMS\\CommonMethod_Class\\AdminDashboardActions.cs",
+              "ToolTip": "D:\\.Net\\HMS\\HMS\\CommonMethod_Class\\AdminDashboardActions.cs",
+              "RelativeToolTip": "HMS\\CommonMethod_Class\\AdminDashboardActions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T11:40:04.259Z",
+              "WhenOpened": "2025-09-15T12:30:17.274Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppointmentController.cs",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Controllers\\AppointmentController.cs",
-              "RelativeDocumentMoniker": "HMS\\Controllers\\AppointmentController.cs",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\Controllers\\AppointmentController.cs",
-              "RelativeToolTip": "HMS\\Controllers\\AppointmentController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T11:40:01.008Z",
+              "DocumentIndex": 0,
+              "Title": "AdminDashboard.cshtml",
+              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\Admin\\AdminDashboard.cshtml",
+              "RelativeDocumentMoniker": "HMS\\Views\\Admin\\AdminDashboard.cshtml",
+              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\Admin\\AdminDashboard.cshtml",
+              "RelativeToolTip": "HMS\\Views\\Admin\\AdminDashboard.cshtml",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAGQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T12:25:05.241Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AppointmentActions.cs",
-              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\CommonMethod_Class\\AppointmentActions.cs",
-              "RelativeDocumentMoniker": "HMS\\CommonMethod_Class\\AppointmentActions.cs",
-              "ToolTip": "D:\\.Net\\HMS\\HMS\\CommonMethod_Class\\AppointmentActions.cs",
-              "RelativeToolTip": "HMS\\CommonMethod_Class\\AppointmentActions.cs",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAiwMoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T11:39:58.568Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\.Net\\HMS\\HMS\\Views\\Appointment\\Index.cshtml",
+              "RelativeDocumentMoniker": "HMS\\Views\\Appointment\\Index.cshtml",
+              "ToolTip": "D:\\.Net\\HMS\\HMS\\Views\\Appointment\\Index.cshtml",
+              "RelativeToolTip": "HMS\\Views\\Appointment\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T11:40:12.231Z",
               "EditorCaption": ""
             }
           ]

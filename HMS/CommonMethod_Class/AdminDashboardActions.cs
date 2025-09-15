@@ -34,5 +34,28 @@ namespace HMS.CommonMethod_Class
             }
             return list;
         }
+
+        public AdminDashBoard GetDashboardCounts()
+        {
+            AdminDashBoard dashboard = new AdminDashBoard();
+
+            using (SqlConnection con = new SqlConnection(connection))
+            {
+                SqlCommand cmd = new SqlCommand("sp_AdminDashboard_Counts", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    dashboard.TotalAppointments = Convert.ToInt32(dr["TotalAppointments"]);
+                    dashboard.CompletedAppointments = Convert.ToInt32(dr["CompletedAppointments"]);
+                    dashboard.PendingAppointments = Convert.ToInt32(dr["PendingAppointments"]);
+                    dashboard.TotalPatients = Convert.ToInt32(dr["TotalPatients"]);
+                }
+            }
+            return dashboard;
+        }
+
     }
 }

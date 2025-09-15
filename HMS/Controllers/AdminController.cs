@@ -34,13 +34,25 @@ namespace HMS.Controllers
         {
             try
             {
-                var appointment = actions.TodaysAppointment();
-                return View(appointment);
+                var counts = actions.GetDashboardCounts();  
+                var todaysAppointments = actions.TodaysAppointment(); 
+
+                var viewModel = new AdminDashboardViewModel
+                {
+                    DashboardCounts = counts,
+                    TodaysAppointments = todaysAppointments
+                };
+
+                return View(viewModel);
             }
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = "Something Went Wrong";
-                return View(new List<Appointment>());
+                return View(new AdminDashboardViewModel
+                {
+                    DashboardCounts = new AdminDashBoard(),
+                    TodaysAppointments = new List<AdminDashBoard>()
+                });
             }
         }
 

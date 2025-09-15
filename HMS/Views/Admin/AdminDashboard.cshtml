@@ -1,4 +1,4 @@
-﻿@model List<HMS.Models.AdminDashBoard>
+﻿@model HMS.Models.AdminDashboardViewModel
 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 mt-4">
   <div class="col">
     <div class="icon-card h-100 d-flex align-items-center p-3">
@@ -7,7 +7,7 @@
       </div>
       <div class="content ms-3">
         <h6 class="mb-1">Total <br /> Appointments</h6>
-        <h3 class="text-bold">5</h3>
+            <h3 class="text-bold">@Model.DashboardCounts.TotalAppointments</h3>
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@
       </div>
       <div class="content ms-3">
         <h6 class="mb-1">Completed Appointments</h6>
-        <h3 class="text-bold">2</h3>
+            <h3 class="text-bold">@Model.DashboardCounts.CompletedAppointments</h3>
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@
       </div>
       <div class="content ms-3">
         <h6 class="mb-1">Pending Appointments</h6>
-        <h3 class="text-bold">3</h3>
+            <h3 class="text-bold">@Model.DashboardCounts.PendingAppointments</h3>
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@
       </div>
       <div class="content ms-3">
         <h6 class="mb-1">Total <br/> Patients</h6>
-        <h3 class="text-bold">2000</h3>
+            <h3 class="text-bold">@Model.DashboardCounts.TotalPatients</h3>
       </div>
     </div>
   </div>
@@ -74,9 +74,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if (Model != null && Model.Any())
+                                    @if (Model.TodaysAppointments != null && Model.TodaysAppointments.Any())
                                     {
-                                        foreach (var todayappointment in Model)
+                                        foreach (var todayappointment in Model.TodaysAppointments)
                                         {
                                             <tr>
                                                 <td>@todayappointment.DoctorName</td>
@@ -85,9 +85,9 @@
                                                 <td>
                                                     <span class="badge
                                                         @(todayappointment.AppointmentStatus == "Pending" ? "bg-warning text-dark" :
-                                                        todayappointment.AppointmentStatus == "Completed" ? "bg-success" :
-                                                        todayappointment.AppointmentStatus == "Cancelled" ? "bg-danger" : "bg-secondary")">
-                                                        @todayappointment.AppointmentStatus
+                                                          todayappointment.AppointmentStatus == "Completed" ? "bg-success" :
+                                                          todayappointment.AppointmentStatus == "Cancelled" ? "bg-danger" : "bg-secondary")">
+                                                          @todayappointment.AppointmentStatus
                                                     </span>
                                                 </td>
                                             </tr>

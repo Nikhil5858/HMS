@@ -38,6 +38,7 @@
                     <option value="">-- Select Status --</option>
                     <option value="Pending" selected="@(ViewData["status"]?.ToString() == "Pending")">Pending</option>
                     <option value="Scheduled" selected="@(ViewData["status"]?.ToString() == "Scheduled")">Scheduled</option>
+                    <option value="Completed" selected="@(ViewData["status"]?.ToString() == "Completed")">Completed</option>
                 </select>
             </div>
             <div class="col-md-2">
