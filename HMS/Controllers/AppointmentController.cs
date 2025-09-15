@@ -14,13 +14,28 @@ namespace HMS.Controllers
             this.actions = actions;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string doctorName, string patientName, string status, DateTime? date)
         {
-            List<Appointment> list = actions.GetAppointment();
+            List<Appointment> list;
+
+            if (string.IsNullOrEmpty(doctorName) && string.IsNullOrEmpty(patientName) && string.IsNullOrEmpty(status) && !date.HasValue)
+            {
+                list = actions.GetAppointment();
+            }
+            else
+            {
+                list = actions.GetFilteredAppointments(doctorName, patientName, status, date);
+            }
+
+            ViewData["doctorName"] = doctorName;
+            ViewData["patientName"] = patientName;
+            ViewData["status"] = status;
+            ViewData["date"] = date?.ToString("yyyy-MM-dd");
+
             return View(list);
         }
 
-        
+
         public IActionResult AppointmentAdd()
         {
             var (doctors, patients) = actions.GetDoctorsAndPatients();

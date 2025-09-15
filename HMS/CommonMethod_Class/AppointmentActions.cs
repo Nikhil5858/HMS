@@ -161,5 +161,42 @@ namespace HMS.CommonMethod_Class
             }
         }
 
+        public List<Appointment> GetFilteredAppointments(string doctorName, string patientName, string status, DateTime? date)
+        {
+            List<Appointment> list = new List<Appointment>();
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                SqlCommand cmd = new SqlCommand("sp_Appointment_filter", sqlConnection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@DoctorName", (object)doctorName ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@PatientName", (object)patientName ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@Status", (object)status ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@AppointmentDate", (object)date ?? DBNull.Value);
+
+                sqlConnection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    list.Add(new Appointment
+                    {
+                        AppointmentID = Convert.ToInt32(reader["AppointmentID"]),
+                        DoctorName = reader["DoctorName"].ToString(),
+                        PatientName = reader["PatientName"].ToString(),
+                        AppointmentDate = Convert.ToDateTime(reader["AppointmentDate"]),
+                        AppointmentStatus = reader["AppointmentStatus"].ToString(),
+                        Description = reader["Description"].ToString(),
+                        SpecialRemarks = reader["SpecialRemarks"].ToString(),
+                        Email = reader["PatientEmail"].ToString(),
+                        Specialization = reader["DoctorSpecialization"].ToString(),
+                        UserName = reader["UserName"].ToString()
+                    });
+                }
+            }
+            return list;
+        }
+
     }
 }
